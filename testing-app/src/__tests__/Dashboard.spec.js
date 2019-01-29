@@ -12,10 +12,6 @@ describe('<Dashboard /> tests', () => {
         const foulBtn = getByTestId('foul-btn');
         const hitBtn = getByTestId('hit-btn');
 
-        fireEvent.click(strikeBtn);
-        fireEvent.click(ballsBtn);
-        fireEvent.click(foulBtn);
-        fireEvent.click(hitBtn);
 
         expect(strikeBtn).toHaveTextContent(/strike/i);
         expect(ballsBtn).toHaveTextContent(/ball/i);
