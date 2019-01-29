@@ -7,7 +7,8 @@ class Display extends React.Component {
     this.state = {
       strikes: 0,
       balls: 0,
-      hits: 0
+      hits: 0,
+      foul: 0
     };
   }
 
@@ -27,6 +28,14 @@ class Display extends React.Component {
     }
   };
 
+  foulHandler = event => {
+    if (this.state.strikes < 2) {
+      this.setState({ strikes: this.state.strikes + 1 });
+    } else {
+      this.setState({ foul: this.state.foul + 1 });
+    }
+  };
+
   hitHandler = event => {
     this.setState({ strikes: 0, balls: 0, hits: this.state.hits + 1 });
   };
@@ -38,11 +47,13 @@ class Display extends React.Component {
           <div data-testid="strikeOuts">{this.state.strikes + " Strikes "}</div>
           <div data-testid="ballsTotal">{this.state.balls + " Balls "}</div>
           <div data-testid="hitsTotal">{this.state.hits + " Hits "}</div>
+          <div data-testid="foulTotal">{this.state.foul + " Foul "}</div>
         </div>
         <Dashboard
           strikes={this.strikeHandler}
           balls={this.ballsHandler}
           hits={this.hitHandler}
+          foul={this.foulHandler}
         />
       </>
     );
