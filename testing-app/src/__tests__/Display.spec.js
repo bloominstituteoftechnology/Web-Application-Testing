@@ -2,6 +2,7 @@ import React from 'react';
 import { render, fireEvent } from 'react-testing-library';
 import 'jest-dom/extend-expect';
 import Display from '../components/Display.js';
+import Dashboard from '../components/Dashboard.js';
 
 describe('<Display /> tests', () => {
     it('should display balls and strikes', () => {
@@ -14,4 +15,17 @@ describe('<Display /> tests', () => {
         expect(strikes).toBeInTheDocument();
         
     });
+
+    it('should display balls and strikes set to 0 when press the hit button', () => {
+        const { getByText, getByTestId } = render(<Display />);
+
+        const balls = getByText(/Balls:/i);
+        const strikes = getByText(/Strikes:/i);
+        const hitBtn = getByTestId('hit-btn');
+
+        fireEvent.click(hitBtn);
+
+        expect(balls).toHaveTextContent(/0/i);
+        expect(strikes).toHaveTextContent(/0/i);
+    })
 });
