@@ -18,4 +18,19 @@ describe('<Dashboard /> tests', () => {
         expect(foulBtn).toHaveTextContent(/foul/i);
         expect(hitBtn).toHaveTextContent(/hit/i);
     });
+
+    it('should check if buttons were clicked', () => {
+        const { getByTestId } = render(<Dashboard />);
+
+        const strikeBtn = getByTestId('strike-btn');
+        const ballsBtn = getByTestId('ball-btn');
+        const foulBtn = getByTestId('foul-btn');
+        const hitBtn = getByTestId('hit-btn');
+
+        fireEvent.click(strikeBtn);
+        fireEvent.click(ballsBtn);
+        fireEvent.click(foulBtn);
+        fireEvent.click(hitBtn);
+
+    });
 });
