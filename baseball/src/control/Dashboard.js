@@ -9,6 +9,9 @@ const Dashboard = props => {
             <button onClick = {props.ballCounter}>Ball</button>
         </div>,
         <div>
+            <button onClick = {props.strikeCounter}>Foul</button>
+        </div>,
+        <div>
             <button onClick = {props.hitCounter}>Hits</button>
         </div>
     ]

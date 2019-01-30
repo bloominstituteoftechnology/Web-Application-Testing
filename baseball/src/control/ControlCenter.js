@@ -23,10 +23,9 @@ class ControlCenter extends React.Component {
         let addStrike = this.state.strike ++;
         if(this.state.strike <= 3){
             this.setState({addStrike});
-            console.log(this.state);
+
         }else {
             this.setState({ strike: 1, ball: 0});
-            console.log(this.state)
         }
     };
 
@@ -34,12 +33,11 @@ class ControlCenter extends React.Component {
         let addBall = this.state.ball ++;
         if(this.state.ball <= 4){
             this.setState({addBall});
-            console.log(this.state);
+
         }else {
             this.setState({ strike: 0, ball: 1});
-            console.log(this.state)
         }
-    }
+    };
 
     hitCounter = () => {
         let addHit = this.state.hits ++;
