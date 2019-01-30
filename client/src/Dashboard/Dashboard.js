@@ -2,6 +2,7 @@ import React from 'react';
 
 class Dashboard extends React.Component {
 
+
     called = ev => {
         console.log(ev.target.name)
         this.props.call(ev.target.name)

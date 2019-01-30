@@ -6,8 +6,8 @@ class Dashboard extends React.Component {
         return (
             <>
                 <div className="display">
-                    <div data-testid="Strikes">{`${this.props.strikes} Strikes`}</div>
-                    <div data-testid="Balls">{`${this.props.balls} Balls`}</div>
+                    <div data-testid="Strikes">{`${this.props.strikes} strikes`}</div>
+                    <div data-testid="Balls">{`${this.props.balls} balls`}</div>
 
                 </div>
 
