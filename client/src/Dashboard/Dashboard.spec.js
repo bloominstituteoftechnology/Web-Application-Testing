@@ -17,26 +17,5 @@ describe('<Dashboard />', () => {
         expect(balls).toHaveTextContent('1 Balls')
     });
 
-    describe('Select button', () => {
-        it('should add a strike', async () => {
-            let strikes = 0;
-            function call(func) {
-                console.log(func)
-                strikes += 1;
 
-            }
-            const { getByText, getByTestId } = render(<DashBoard strikes={strikes} call={call} />);
-
-
-            const button = getByText('Strike');
-
-            fireEvent.click(button);
-            console.log(strikes);
-            const selected = await waitForElement(() =>
-                getByTestId('Strikes'),
-            )
-
-            expect(selected).toHaveTextContent('1 Strikes');
-        });
-    });
 });
