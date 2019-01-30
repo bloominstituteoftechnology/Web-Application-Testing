@@ -25,6 +25,36 @@ describe('<App/>', () => {
 
       expect(selected).toHaveTextContent(/1 Strikes/i);
     });
+
+    it('Should add a ball', () => {
+      const { getByText, getByTestId } = render(<App />);
+
+      const button = getByText('Ball');
+
+      fireEvent.click(button);
+      const selected = getByTestId('Balls');
+
+      expect(selected).toHaveTextContent(/1 Balls/i)
+    });
+
+    it('Should add a ball', () => {
+      const { getByText, getByTestId } = render(<App />);
+
+
+      const strikeButton = getByText('Strike');
+      const ballButton = getByText('Ball');
+      const button = getByText('Hit');
+
+      fireEvent.click(ballButton);
+      fireEvent.click(strikeButton);
+      fireEvent.click(button);
+
+      const selectedBalls = getByTestId('Balls');
+      const selectedStrikes = getByTestId('Strikes');
+
+      expect(selectedBalls).toHaveTextContent(/0 Balls/i)
+      expect(selectedStrikes).toHaveTextContent(/0 Strikes/i);
+    });
   });
 })
 

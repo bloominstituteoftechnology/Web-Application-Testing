@@ -7,7 +7,7 @@ import Display from './Display';
 describe('<Display />', () => {
     it('renders the display info name', () => {
 
-        const { getByTestId, debug } = render(<Display strikes={0} balls={1} />);
+        const { getByTestId, debug } = render(<Display strikes={0} balls={2} />);
 
 
         const strikes = getByTestId('Strikes');
@@ -15,7 +15,7 @@ describe('<Display />', () => {
 
 
         expect(strikes).toHaveTextContent('0 strikes');
-        expect(balls).toHaveTextContent('1 balls')
+        expect(balls).toHaveTextContent('2 balls');
     });
 
 });
