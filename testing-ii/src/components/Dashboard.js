@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 
 class Dashboard extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-
-    }
+  constructor(props) {
+    super(props);
   }
 
   render() {
     return (
-      <div>Dashboard</div>
+      <>
+        <button onClick={this.props.addStrike}>Strike</button>
+        <button onClick={this.props.addBall}>Ball</button>
+        <button onClick={this.props.addFoul}>Foul</button>
+        <button onClick={this.props.addHit}>Hit</button>
+      </>
     )
   }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Display from './components/Display';
+import Dashboard from './components/Dashboard';
 
 class App extends Component {
   constructor() {
@@ -14,32 +15,48 @@ class App extends Component {
     }
   }
 
-  handleStrikes = (e) => {
+  addStrike = (e) => {
     e.preventDefault();
-    if (this.state.strikes < 3) {
-      this.state.strikes++;
-    } else if (this.state.strikes === 3 || this.state.strikes > 3) {
-      this.state.strikes === 0;
-      this.state.balls === 0;
-    }
+    this.setState({
+      strike: this.state.strike + 1,
+    })
   }
 
-  handleBalls = (e) => {
+  addBall = (e) => {
     e.preventDefault();
-    if (this.state.balls < 4) {
-      this.state.balls++;
-    } else if (this.state.balls === 4 || this.state.balls > 4) {
-      this.state.strikes === 0;
-      this.state.balls === 0;
-    }
+    this.setState({
+      ball: this.state.ball + 1,
+    })
+  }
+
+  addFoul = (e) => {
+    e.preventDefault();
+    this.setState({
+      foul: this.state.foul + 1,
+    })
+  }
+
+  addHit = (e) => {
+    e.preventDefault();
+    this.setState({
+      hit: this.state.hit + 1,
+      strike: 0,
+      ball: 0
+    })
   }
 
   render() {
     return (
       <div className="App">
         <Display 
-          handleBalls={this.handleBalls}
-          handleStrikes={this.handleStrikes}
+          strikes={this.state.strike}
+          balls={this.state.ball}
+        />
+        <Dashboard
+          addStrike={this.addStrike}
+          addBall={this.addBall}
+          addFoul={this.addFoul}
+          addHit={this.addHit}
         />
       </div>
     );
