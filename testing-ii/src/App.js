@@ -17,23 +17,44 @@ class App extends Component {
 
   addStrike = (e) => {
     e.preventDefault();
-    this.setState({
-      strike: this.state.strike + 1,
-    })
+    if (this.state.strike < 2) {
+      this.setState({
+        strike: this.state.strike + 1
+      })
+    } else {
+      this.setState({
+        strike: 0,
+        ball: 0
+      })
+    }
+    
   }
 
   addBall = (e) => {
     e.preventDefault();
-    this.setState({
-      ball: this.state.ball + 1,
-    })
+    if (this.state.ball < 3) {
+      this.setState({
+        ball: this.state.ball + 1
+      })
+    } else {
+      this.setState({
+        strike: 0,
+        ball: 0
+      })
+    }
   }
 
   addFoul = (e) => {
     e.preventDefault();
-    this.setState({
-      foul: this.state.foul + 1,
-    })
+    if (this.state.strike < 2) {
+      this.setState({
+        strike: this.state.strike + 1
+      })
+    } else {
+      this.setState({
+        ...this.state
+      })
+    }
   }
 
   addHit = (e) => {
