@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "jest-dom": "^3.0.1",
+    "react-testing-library": "^5.4.4"
+  },
+  "name": "testing-ii",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kyleteeter/testing-ii.git",
+  "author": "<kyleteeter12@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "gitignore": "^0.6.0"
+  }
+}
