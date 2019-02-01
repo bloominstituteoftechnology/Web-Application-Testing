@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Button, ButtonGroup } from "react-bootstrap";
 
 import Display from "./Display";
+import { strike, ball, foul, out } from "../helpers/playBall";
 
 import styled from "styled-components";
 
@@ -16,8 +17,9 @@ export default class Dashboard extends Component {
   state = {
     balls: 0,
     strikes: 0,
-    hit: false,
-    foul: false
+    hits: 0,
+    fouls: 0,
+    outs: 0
   };
 
   render() {
