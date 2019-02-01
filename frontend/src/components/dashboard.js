@@ -12,6 +12,7 @@ class Dashboard extends React.Component {
 
         this.increment = this.increment.bind(this)
         this.incrementBall = this.incrementBall.bind(this)
+        this.hitBall = this.hitBall.bind(this)
     }
     
     increment(){
@@ -28,6 +29,14 @@ class Dashboard extends React.Component {
         }
     }
 
+    hitBall(){
+        this.setState({hit: true });
+        if (this.state.hit === true){
+            this.setState({strikes: 0});
+            this.setState({balls: 0});
+        }
+    }
+
     render(){
         console.log(this.state.strikes)
         return(
@@ -35,7 +44,7 @@ class Dashboard extends React.Component {
                 <button onClick={this.increment}>Strike</button>
                 <button onClick={this.incrementBall}>Ball</button>
                 <button>Foul</button>
-                <button>Hit</button>
+                <button onClick={this.hitBall}>Hit</button>
                 <h1> Current Strike: {this.state.strikes}</h1>
                 <h1> Current Balls: {this.state.balls}</h1>
 

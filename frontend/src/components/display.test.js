@@ -12,13 +12,13 @@ describe('The Display Component', () => {
     test('display the count of balls', () => {
         const component = render(<Display/>);
         const count = component.getByTestId('count');
-        expect(count).toHaveTextContent('3');
+        expect(count).toHaveTextContent('0');
     });
 
     test('display the strike number', () => {
         const component = render(<Display/>);
         const strike = component.getByTestId('strike');
-        expect(strike).toHaveTextContent('2');
+        expect(strike).toHaveTextContent('0');
     })
 })
 

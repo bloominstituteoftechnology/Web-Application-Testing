@@ -3,8 +3,8 @@ import React from 'react';
 
 class Display extends React.Component {
     state = {
-        balls: 3,
-        strikes: 2,
+        balls: 0,
+        strikes: 0,
         hit: false
     }
 
