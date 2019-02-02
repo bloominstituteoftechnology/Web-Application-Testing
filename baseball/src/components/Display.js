@@ -63,11 +63,11 @@ export default class Display extends Component {
           <Image src={scoreboard} alt="baseball scoreboard" fluid />
         </Container>
         <NumberContainer>
-          <Number>Balls: {this.state.balls}</Number>
-          <Number>Strikes: {this.state.strikes}</Number>
-          <Number>Hits: {this.state.hits}</Number>
-          <Number>Fouls: {this.state.fouls}</Number>
-          <Number>Outs: {this.state.outs}</Number>
+          <Number data-testid="balls">Balls: {this.state.balls}</Number>
+          <Number data-testid="strikes">Strikes: {this.state.strikes}</Number>
+          <Number data-testid="hits">Hits: {this.state.hits}</Number>
+          <Number data-testid="fouls">Fouls: {this.state.fouls}</Number>
+          <Number data-testid="outs">Outs: {this.state.outs}</Number>
         </NumberContainer>
         <Dashboard
           callStrike={this.callStrike}
