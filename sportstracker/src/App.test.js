@@ -69,8 +69,7 @@ describe('The APP', () => {
     fireEvent.click(foulButton);
     expect(strikes).toHaveTextContent(2);
     fireEvent.click(foulButton);
-    expect(balls).toHaveTextContent(0);
-    expect(strikes).toHaveTextContent(0);
+    expect(strikes).toHaveTextContent(2);
   });
 
   it ('hit button resets', () => {

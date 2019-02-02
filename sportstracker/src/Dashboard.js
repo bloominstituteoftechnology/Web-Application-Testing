@@ -12,7 +12,7 @@ class Dashboard extends React.Component {
         <div>
             <button data-testid= "strikeButton" onClick={this.props.strikeClick}>Strike</button>
             <button data-testid= "ballButton" onClick={this.props.ballClick}>Ball</button>
-            <button data-testid= "foulButton" onClick={this.props.strikeClick}>Foul</button>
+            <button data-testid= "foulButton" onClick={this.props.foulClick}>Foul</button>
             <button data-testid= "hitButton" onClick={this.props.hitClick}>Hit</button>
         </div>
     )

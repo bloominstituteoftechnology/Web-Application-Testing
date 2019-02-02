@@ -27,6 +27,12 @@ class App extends Component {
       }
     }
 
+    foul = () => {
+      if (this.state.strikes < 2) {
+        this.setState({ strikes: this.state.strikes + 1});
+      }
+    }
+
     hit = () => {
       this.setState({ balls: 0, strikes: 0 });
     }
@@ -41,7 +47,8 @@ class App extends Component {
         <Dashboard 
         ballClick={this.ball.bind(this)} 
         strikeClick={this.strike.bind(this)} 
-        hitClick={this.hit.bind(this)} />
+        hitClick={this.hit.bind(this)}
+        foulClick={this.foul.bind(this)} />
       </div>
     );
   }
