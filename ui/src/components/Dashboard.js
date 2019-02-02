@@ -15,7 +15,7 @@ class Dashboard extends React.Component {
     updateStrikes = () => {
         let updatedStrikes = this.state.strikes;
         updatedStrikes++;
-        if (updatedStrikes > 3) {
+        if (updatedStrikes >= 3) {
             updatedStrikes = 0;
         }
         this.setState({
@@ -26,7 +26,7 @@ class Dashboard extends React.Component {
     updateBalls = () => {
         let updatedBalls = this.state.balls;
         updatedBalls++;
-        if (updatedBalls > 4) {
+        if (updatedBalls >= 4) {
             updatedBalls = 0;
         }
         this.setState({
@@ -42,11 +42,10 @@ class Dashboard extends React.Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             <div>
                 <h1>Dashboard</h1>
-                <Display />
+                <Display atbat={this.state}/>
                 <form> 
                     <button className='btn' name='strike' type='button' onClick={this.updateStrikes}>Strike</button>
                     <button className='btn' name='ball' type='button' onClick={this.updateBalls}>Ball</button>
