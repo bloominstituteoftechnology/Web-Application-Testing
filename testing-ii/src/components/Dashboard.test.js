@@ -9,4 +9,24 @@ describe('The Dashboard Component', () => {
     render(<Dashboard />);
   })
 
+  it ('renders the strike, ball, hit, and foul buttons', () => {
+    const dashboard = render(<Dashboard />);
+    const strikeButton = dashboard.getByText(/strike/i);
+    const ballButton = dashboard.getByText(/ball/i);
+    const hitButton = dashboard.getByText(/hit/i);
+    const foulButton = dashboard.getByText(/foul/i);
+
+    expect(strikeButton).toHaveTextContent(/strike/i);
+    expect(ballButton).toHaveTextContent(/ball/i);
+    expect(hitButton).toHaveTextContent(/hit/i);
+    expect(foulButton).toHaveTextContent(/foul/i);
+  })
+
 })
+
+// Does it render?
+// Does it render correctly?
+// Are sub-components rendered, and how many of them?
+// Are props handled correctly.
+// Is state handled correctly.
+// Does it handle events correctly?

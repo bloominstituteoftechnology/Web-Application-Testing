@@ -11,3 +11,10 @@ describe('The App Component', () => {
 
 })
 
+// Does it render?
+// Does it render correctly?
+// Are sub-components rendered, and how many of them?
+// Are props handled correctly.
+// Is state handled correctly.
+// Does it handle events correctly?
+
