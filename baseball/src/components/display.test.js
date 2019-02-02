@@ -28,7 +28,7 @@ describe("Display component", () => {
             hits: 0,
       }
       const display = render(<Display {...props}/>)
-      const bvalue = display.getByText(/bvalue/i);
+      const bvalue = display.getByTestId(/bvalue/i);
       const strikevalue = display.getByTestId(/strikevalue/i);
       const outvalue = display.getByTestId(/outvalue/i);
       const hitvalue = display.getByTestId(/hitvalue/i);
@@ -54,7 +54,7 @@ describe("test button click", () => {
       const display = render(<Display {...props}/>)
       const dashboard = render(<Dashboard />)
 
-      const button = dashboard.getByText(/strike!/i)
+      const button = dashboard.getByText(/strike/i)
       fireEvent.click(button);
 
       const strikevalue = display.getByTestId("strikevalue");
