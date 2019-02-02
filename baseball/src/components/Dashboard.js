@@ -60,24 +60,23 @@ class Dashboard extends Component {
    }
 
    foul() {
-      if(this.state.outs === 2){
-         this.setState(prevState => ({
-            outs: prevState.outs + 1,
-            balls: 0,
-            strikes: 0,
-            fouls: 0,
-         }))
-      } else {
-         this.setState(prevState => ({fouls: prevState.fouls +1}))
+      this.setState(prevState => ({fouls: prevState.fouls +1}))
          if(this.state.fouls >= 3) {
+            if(this.state.outs >= 2 ){
+               this.setState({
+                  outs: 0,
+                  balls: 0,
+                  strikes: 0,
+                  fouls: 0,
+               })
+            } else {
             this.setState(prevState => ({
                outs: prevState.outs + 1,
                balls: 0,
                strikes: 0,
                fouls: 0,
             }))
-         }
-      }
+         }}
    }
 }
 
