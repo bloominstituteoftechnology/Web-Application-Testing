@@ -67,9 +67,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Display stats = {this.state} />
+        <Display {...this.state} />
         <Dashboard
-          stats = {this.state}
+          {...this.state}
           callStrike = {this.callStrike}
           callBall = {this.callBall}
           callFoul = {this.callFoul}
