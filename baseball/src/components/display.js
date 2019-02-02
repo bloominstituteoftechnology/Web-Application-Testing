@@ -9,7 +9,7 @@ import React, { Component } from 'react'
       <div>
           <h1>Strikes {this.props.count.strikes}</h1>
           <h1>Balls: {this.props.count.balls}</h1>
-          <h1>Outs: {this.props.count.balls}</h1>
+          <h1>Outs: {this.props.count.outs}</h1>
         
       </div>
     )
