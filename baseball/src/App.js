@@ -10,27 +10,31 @@ class App extends Component {
       strikes: 0,
       balls: 0,
       fouls: 0,
-      hit: false,
-      out: false
     };
   }
 
   callStrike = e => {
     e.preventDefault();
-    const strikes = this.state.strikes + 1;
-    this.setState({
-      ...this.state,
-      strikes: strikes
-    });
+    let strikes = this.state.strikes + 1;
+    if (strikes > 2) {
+      this.out();
+    } else {
+      this.setState({
+        strikes: strikes
+      })
+    };
   };
 
   callBall = e => {
     e.preventDefault();
-    const balls = this.state.balls + 1;
-    this.setState({
-      ...this.state,
-      balls: balls
-    });
+    let balls = this.state.balls + 1;
+    if (balls > 3) {
+      this.out();
+    } else {
+      this.setState({
+        balls: balls
+      })
+    }
   };
 
   callFoul = e => {
@@ -45,29 +49,20 @@ class App extends Component {
   hit = e => {
     e.preventDefault();
     this.setState({
-      ...this.state,
-      hit: true
-    });
+      strikes: 0,
+      balls: 0,
+      fouls: 0,
+    })
   };
 
   out = e => {
     e.preventDefault();
     this.setState({
-      ...this.state,
-      out: true
-    });
-  }
-
-  reset = e => {
-    e.preventDefault();
-    this.setState({
       strikes: 0,
       balls: 0,
       fouls: 0,
-      hit: false,
-      out: false
-    });
-  };
+    })
+  }
 
   render() {
     return (
@@ -80,7 +75,6 @@ class App extends Component {
           callFoul = {this.callFoul}
           hit = {this.hit}
           out = {this.out}
-          reset = {this.reset}
         />
       </div>
     );
