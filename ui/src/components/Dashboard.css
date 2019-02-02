@@ -1,0 +1,19 @@
+.btn {
+    width: 150px;
+    padding: 5px;
+    margin: 5px;
+    color: slateblue;
+    background-color: aliceblue;
+    border-radius: 15px;
+    border: 1px solid black;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: black;
+}
+
+.btn:active {
+    background-color: grey;
+}
