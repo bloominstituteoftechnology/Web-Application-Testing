@@ -14,6 +14,7 @@ class Dashboard extends Component {
          <>
             <h2 data-testid="header">Batter Up!</h2>
             <Display
+               data-testid="display"
                balls={this.state.balls} 
                strikes={this.state.strikes} 
                outs={this.state.outs}

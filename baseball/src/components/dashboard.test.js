@@ -14,7 +14,9 @@ describe("Dashboard component", () => {
       expect(header).toHaveTextContent(/batter up!/i)
     })
    it("renders the display component", () => {
-      const component = render(<Dashboard />)
+      const dashboard = render(<Dashboard />)
+      const display = render(<Display />)
+
       
 
       // expect(display).toMatchObject()
