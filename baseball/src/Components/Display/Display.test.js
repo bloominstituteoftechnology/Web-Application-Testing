@@ -24,7 +24,7 @@ describe("Display Test", () => {
     const score = display.getByTestId(/balls/i);
     expect(score).toHaveTextContent("1");
   });
-  it(" should increase strike count onClick", () => {
+  it("should increase strike count onClick", () => {
     const component = render(<Dashboard />);
     const strikeBtn = component.getByTestId("strike-btn");
     fireEvent.click(strikeBtn);
