@@ -34,7 +34,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1 id="abi">Abi Field</h1>
+        <div id="sign">
         <Display balls={this.state.balls} strikes={this.state.strikes}/>
+        </div>
         <Dashboard 
         ballClick={this.ball.bind(this)} 
         strikeClick={this.strike.bind(this)} 
