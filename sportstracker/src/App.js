@@ -8,7 +8,7 @@ class App extends Component {
     super(props);
     this.state = {
       balls: 0,
-      strikes: 1
+      strikes: 0
     }}
 
     ball = () => {
@@ -19,11 +19,19 @@ class App extends Component {
       }
     }
 
+    strike = () => {
+      if (this.state.strikes < 2) {
+        this.setState({ strikes: this.state.strikes + 1});
+      } else {
+        this.setState({ balls: 0, strikes: 0 });
+      }
+    }
+
   render() {
     return (
       <div className="App">
         <Display balls={this.state.balls} strikes={this.state.strikes}/>
-        <Dashboard ballClick={this.ball.bind(this)} />
+        <Dashboard ballClick={this.ball.bind(this)} strikeClick={this.strike.bind(this)} />
       </div>
     );
   }
