@@ -19,12 +19,12 @@ describe("Display component", () => {
    })
    it("displays first values", () => {
       const component = render(<Display />)
-      const balls = component.getByTestId("balls");
-      const strikes = component.getByTestId("strikes");
-      const outs = component.getByTestId("outs");
+      const bvalue = component.getByTestId("bvalue");
+      // const strikes = component.getByTestId("strikes");
+      // const outs = component.getByTestId("outs");
 
-      expect(balls).toHaveTextContent("0");
-      expect(strikes).toHaveTextContent("0");
-      expect(outs).toHaveTextContent("0");
+      expect(bvalue).toHaveTextContent("0");
+      // expect(strikes).toHaveTextContent("0");
+      // expect(outs).toHaveTextContent("0");
    })
 })

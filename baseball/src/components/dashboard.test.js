@@ -13,7 +13,10 @@ describe("Dashboard component", () => {
       const header = component.getByText(/batter up!/i);
       expect(header).toHaveTextContent(/batter up!/i)
     })
-   it("displays balls", () => {
+   it("renders the display component", () => {
       const component = render(<Dashboard />)
+      
+
+      // expect(display).toMatchObject()
    })
 })
