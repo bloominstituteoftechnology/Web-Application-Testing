@@ -15,10 +15,10 @@ class App extends Component {
 
   callStrike = e => {
     e.preventDefault();
-    let strikes = this.state.strikes + 1;
-    if (strikes > 2) {
-      this.out();
+    if (this.state.strikes === 2) {
+      this.out(e);
     } else {
+      let strikes = this.state.strikes + 1
       this.setState({
         strikes: strikes
       })
@@ -27,10 +27,10 @@ class App extends Component {
 
   callBall = e => {
     e.preventDefault();
-    let balls = this.state.balls + 1;
-    if (balls > 3) {
+    if (this.state.balls === 3) {
       this.out();
     } else {
+      let balls = this.state.balls + 1;
       this.setState({
         balls: balls
       })
@@ -55,8 +55,8 @@ class App extends Component {
     })
   };
 
-  out = e => {
-    e.preventDefault();
+  out = (e) => {
+    // e.preventDefault();
     this.setState({
       strikes: 0,
       balls: 0,

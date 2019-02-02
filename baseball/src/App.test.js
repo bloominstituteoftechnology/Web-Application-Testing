@@ -1,7 +1,9 @@
 import React from "react";
-import { render, fireEvent } from "react-testing-library";
+import { render, fireEvent, cleanup } from "react-testing-library";
 import App from "./App";
 import "jest-dom/extend-expect";
+
+afterEach(cleanup)
 
 it("renders without crashing", () => {
   render(<App />);
@@ -58,30 +60,16 @@ describe("The baseball app", () => {
 
       expect(selectedBalls).toHaveTextContent(/0 Balls/i);
       expect(selectedStrikes).toHaveTextContent(/0 Strikes/i);
-      expect(selectedFouls).toHaveTextContent(/0 Strikes/i);
+      expect(selectedFouls).toHaveTextContent(/0 Fouls/i);
     });
-  });
-  it("resets when player reaches 3 strikes", () => {
-    const { getByText, getByTestId } = render(<App strikes={2} />);
+    it("resets when player reaches 3 strikes", () => {
+    
+    const { getByText, getByTestId } = render(<App />);
 
     const button = getByText("Strike");
 
     fireEvent.click(button);
-
-    const selectedBalls = getByTestId("Balls");
-    const selectedStrikes = getByTestId("Strikes");
-    const selectedFouls = getByTestId("Fouls");
-
-    expect(selectedBalls).toHaveTextContent(/0 Balls/i);
-    expect(selectedStrikes).toHaveTextContent(/0 Strikes/i);
-    expect(selectedFouls).toHaveTextContent(/0 Strikes/i);
-  });
-
-  it("resets when player reaches 4 balls", () => {
-    const { getByText, getByTestId } = render(<App balls={3} />);
-
-    const button = getByText("Ball");
-
+    fireEvent.click(button);
     fireEvent.click(button);
 
     const selectedBalls = getByTestId("Balls");
@@ -90,6 +78,27 @@ describe("The baseball app", () => {
 
     expect(selectedBalls).toHaveTextContent(/0 Balls/i);
     expect(selectedStrikes).toHaveTextContent(/0 Strikes/i);
-    expect(selectedFouls).toHaveTextContent(/0 Strikes/i);
+    expect(selectedFouls).toHaveTextContent(/0 Fouls/i);
+  });
+
+  it("resets when player reaches 4 balls", () => {
+    
+    const { getByText, getByTestId } = render(<App />);
+
+    const button = getByText("Ball");
+
+    fireEvent.click(button);
+    fireEvent.click(button);
+    fireEvent.click(button);
+    fireEvent.click(button);
+
+    const selectedBalls = getByTestId("Balls");
+    const selectedStrikes = getByTestId("Strikes");
+    const selectedFouls = getByTestId("Fouls");
+
+    expect(selectedBalls).toHaveTextContent(/0 Balls/i);
+    expect(selectedStrikes).toHaveTextContent(/0 Strikes/i);
+    expect(selectedFouls).toHaveTextContent(/0 Fouls/i);
+  });
   });
 });

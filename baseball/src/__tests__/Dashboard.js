@@ -1,10 +1,12 @@
 import React from 'react';
 
-import {render} from 'react-testing-library';
+import {render, cleanup} from 'react-testing-library';
 import'jest-dom/extend-expect';
 
 import Dashboard from '../components/Dashboard';
 // import Display from '../components/Display';
+
+afterEach(cleanup)
 
 it('renders without crashing', () => {
   
