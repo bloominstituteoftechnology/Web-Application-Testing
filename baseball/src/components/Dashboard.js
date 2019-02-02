@@ -2,19 +2,22 @@ import React, {Component} from "react";
 import Display from "./Display";
 
 class Dashboard extends Component {
-   state = { 
-      balls: 0,
-      strikes: 0,
-      fouls: 0,
-      outs: 0,
-      hits: 0,
-}
+   constructor(props){
+      super(props);
+      this.state = { 
+         balls: 0,
+         strikes: 0,
+         fouls: 0,
+         outs: 0,
+         hits: 0,
+      }
+   }
    render() {
       return(
          <>
             <h2 data-testid="header">Batter Up!</h2>
             <Display
-               data-testid="display"
+               // data-testid="display"
                balls={this.state.balls} 
                strikes={this.state.strikes} 
                outs={this.state.outs}
@@ -57,23 +60,23 @@ class Dashboard extends Component {
    }
 
    foul() {
-      if(this.state.outs < 2) {
-         if(this.state.outs === 2){
-            this.setState(prevState => ({
-               outs: prevState.outs + 1,
-               balls: 0,
-               strikes: 0,
-            }))
-         } else {
-            this.setState(prevState => ({fouls: prevState.fouls +1}))
-         }
-      } else {
+      if(this.state.outs === 2){
          this.setState(prevState => ({
-            outs: 0,
+            outs: prevState.outs + 1,
             balls: 0,
             strikes: 0,
             fouls: 0,
          }))
+      } else {
+         this.setState(prevState => ({fouls: prevState.fouls +1}))
+         if(this.state.fouls >= 3) {
+            this.setState(prevState => ({
+               outs: prevState.outs + 1,
+               balls: 0,
+               strikes: 0,
+               fouls: 0,
+            }))
+         }
       }
    }
 }

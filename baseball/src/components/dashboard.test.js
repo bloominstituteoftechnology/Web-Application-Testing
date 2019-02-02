@@ -1,9 +1,9 @@
 import React from 'react';
-import {render} from "react-testing-library";
+import {cleanup, render} from "react-testing-library";
 import "jest-dom/extend-expect";
 import Dashboard from "./Dashboard";
-import Display from "./Display";
 
+afterEach(cleanup);
 describe("Dashboard component", () => {
    it("renders the dashboard component", () => {
       render(<Dashboard />)
@@ -13,12 +13,4 @@ describe("Dashboard component", () => {
       const header = component.getByText(/batter up!/i);
       expect(header).toHaveTextContent(/batter up!/i)
     })
-   it("renders the display component", () => {
-      const dashboard = render(<Dashboard />)
-      const display = render(<Display />)
-
-      
-
-      // expect(display).toMatchObject()
-   })
 })

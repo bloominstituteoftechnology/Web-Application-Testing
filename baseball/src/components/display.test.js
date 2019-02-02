@@ -1,9 +1,10 @@
 import React from 'react';
-import {render} from "react-testing-library";
+import {cleanup, render} from "react-testing-library";
 import "jest-dom/extend-expect";
 import Dashboard from "./Dashboard";
 import Display from "./Display";
 
+afterEach(cleanup);
 describe("Display component", () => {
    it("renders the dashboard component", () => {
       render(<Display />)
@@ -19,9 +20,16 @@ describe("Display component", () => {
       expect(outs).toHaveTextContent(/outs/i);
    })
    it("displays first values", () => {
-      const dashboard = render(<Dashboard />)
-      const display = render(<Display />)
-      const bvalue = display.getByTestId("bvalue");
+      const props = {
+            balls: 0,
+            strikes: 0,
+            fouls: 0,
+            outs: 0,
+            hits: 0,
+      }
+      const display = render(<Display {...props}/>)
+      const bvalue = display.getByTestId(/bvalue/i);
+
       // const strikes = component.getByTestId("strikes");
       // const outs = component.getByTestId("outs");
 
