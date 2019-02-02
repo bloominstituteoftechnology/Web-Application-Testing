@@ -12,10 +12,10 @@ describe("Display Test", () => {
 
   it("displays the ball count", () => {
     const component = render(<Display />);
-      const balls = component.getByTestId(/balls/i);
-      const strikes = component.getByTestId(/strikes/i);
-      expect(strikes).toHaveTextContent("0");
-      expect(balls).toHaveTextContent("0");
+    const balls = component.getByTestId(/balls/i);
+    const strikes = component.getByTestId(/strikes/i);
+    expect(strikes).toHaveTextContent("0");
+    expect(balls).toHaveTextContent("0");
   });
 
   it("should increase ball count onClick", () => {
