@@ -45,7 +45,8 @@ class App extends Component {
   hit = (e) => {
       this.setState({
         balls: 0,
-        strikes: 0
+        strikes: 0,
+        fouls: 0
       })
   }
 
