@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import { Button } from "react-bootstrap";
 
-import Display from "./Display";
-import { strike, ball, foul, hit } from "../helpers/playBall";
-
 import styled from "styled-components";
 
 const ButtonContainer = styled.div`
@@ -14,54 +11,16 @@ const ButtonContainer = styled.div`
 `;
 
 export default class Dashboard extends Component {
-  state = {
-    balls: 0,
-    strikes: 0,
-    hits: 0,
-    fouls: 0,
-    outs: 0
-  };
-
-  callStrike = event => {
-    event.preventDefault();
-    strike(this.state);
-    console.log(this.state);
-  };
-
-  callBall = event => {
-    event.preventDefault();
-    ball(this.state);
-    console.log(this.state);
-  };
-
-  callFoul = event => {
-    event.preventDefault();
-    foul(this.state);
-    console.log(this.state);
-  };
-
-  callHit = event => {
-    event.preventDefault();
-    hit(this.state);
-    console.log(this.state);
-  };
-
   render() {
     return (
       <div>
-        <Display
-          balls={this.state.balls}
-          strikes={this.state.strikes}
-          hits={this.state.hits}
-          fouls={this.state.fouls}
-          outs={this.state.outs}
-        />
         <ButtonContainer>
           <Button
             variant="danger"
             size="lg"
             style={{ marginBottom: "10px" }}
-            onClick={this.callStrike}
+            onClick={this.props.callStrike}
+            data-testid="strike-btn"
           >
             Strike!
           </Button>
@@ -69,7 +28,8 @@ export default class Dashboard extends Component {
             variant="secondary"
             size="lg"
             style={{ marginBottom: "10px" }}
-            onClick={this.callBall}
+            onClick={this.props.callBall}
+            data-testid="ball-btn"
           >
             Ball!
           </Button>
@@ -77,7 +37,8 @@ export default class Dashboard extends Component {
             variant="warning"
             size="lg"
             style={{ marginBottom: "10px" }}
-            onClick={this.callFoul}
+            onClick={this.props.callFoul}
+            data-testid="foul-btn"
           >
             Foul!
           </Button>
@@ -85,7 +46,8 @@ export default class Dashboard extends Component {
             variant="success"
             size="lg"
             style={{ marginBottom: "10px" }}
-            onClick={this.callHit}
+            onClick={this.props.callHit}
+            data-testid="hit-btn"
           >
             Hit!
           </Button>
