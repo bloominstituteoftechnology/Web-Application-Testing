@@ -9,7 +9,7 @@ export default class Display extends Component {
 
   ballsHandler = e => {
     e.preventDefault();
-    if (this.state.balls >= 4 && this.state.strikes >= 3) {
+    if (this.state.balls >= 4 || this.state.strikes >= 3) {
       this.setState({
         balls: 0,
         strikes: 0
@@ -23,7 +23,7 @@ export default class Display extends Component {
   };
 
   strikeHandler = () => {
-    if (this.state.balls >= 4 && this.state.strikes >= 3) {
+    if (this.state.balls >= 4 || this.state.strikes >= 3) {
       this.setState({
         ...this.state,
         balls: 0,
