@@ -1,8 +1,8 @@
 import React from 'react';
 import Display from './Display';
-import { render } from 'react-testing-library'
+import { render, fireEvent } from 'react-testing-library'
 import 'jest-dom/extend-expect'
-
+import Dashboard from '../Dashboard/Dashboard'
 
 
 describe('Display Test', () => {
@@ -16,6 +16,41 @@ describe('Display Test', () => {
         const component = render(<Display />)
         const score = component.getByTestId(/balls/i)
         expect(score).toHaveTextContent('0')
+    })
+
+    it("should increase ball count onClick", () => {
+        const component = render(<Dashboard />);
+        const ballBtn = component.getByTestId("ball-btn");
+        fireEvent.click(ballBtn);
+        const display = render(<Display />);
+        const score = display.getByTestId(/balls/i);
+        expect(score).toHaveTextContent("1");
+    });
+    it(' should increase strike count onClick', () => {
+        const component = render(<Dashboard />);
+        const strikeBtn = component.getByTestId("strike-btn");
+        fireEvent.click(strikeBtn);
+        const display = render(<Display />);
+        const score = display.getByTestId(/strikes/i);
+        expect(score).toHaveTextContent("1");
+    })
+    it('should increase strike < 2 when foulBtn is clicked', () => {
+        const component = render(<Dashboard />);
+        const foulBtn = component.getByTestId('foul-btn');
+        fireEvent.click(foulBtn);
+        const display = render(<Display />);
+        const score = display.getByTestId(/strikes/i)
+        expect(score).toHaveTextContent('2')
+    })
+    it('should reset strikes and balls when hitBtn is clicked', () => {
+        const component = render(<Dashboard />)
+        const hitBtn = component.getByTestId('hit-btn')
+        fireEvent.click(hitBtn)
+        const display = render(<Display />)
+        const balls = display.getByTestId(/balls/i)
+        const strikes = display.getByTestId(/strikes/i)
+        expect(balls).toHaveTextContent('0')
+        expect(strikes).toHaveTextContent('0')
     })
 
 })
