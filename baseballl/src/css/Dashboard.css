@@ -1,0 +1,21 @@
+button{
+    cursor:pointer;
+}
+.dashboard-container{
+    width:80%;
+    display:flex;
+    flex-direction:column;
+    margin:20px auto;
+}
+.dash-sub{
+    display:flex;
+    justify-content:space-around;
+}
+.button{
+    border: 4px solid rgba(38, 84, 209, 0.808);
+    border-radius: 4px;
+    width:15%;
+    text-align:center;
+    padding:20px;
+   
+}
