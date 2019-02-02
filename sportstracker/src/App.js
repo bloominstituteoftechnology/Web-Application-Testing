@@ -27,11 +27,18 @@ class App extends Component {
       }
     }
 
+    hit = () => {
+      this.setState({ balls: 0, strikes: 0 });
+    }
+
   render() {
     return (
       <div className="App">
         <Display balls={this.state.balls} strikes={this.state.strikes}/>
-        <Dashboard ballClick={this.ball.bind(this)} strikeClick={this.strike.bind(this)} />
+        <Dashboard 
+        ballClick={this.ball.bind(this)} 
+        strikeClick={this.strike.bind(this)} 
+        hitClick={this.hit.bind(this)} />
       </div>
     );
   }
