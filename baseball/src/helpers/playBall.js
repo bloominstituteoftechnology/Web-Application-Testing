@@ -1,49 +1,61 @@
-const strike = batterUp => {
-  if (batterUp.strikes < 3) {
-    batterUp.strikes++;
+const strike = item => {
+  if (item.strikes < 2) {
+    item.strikes++;
   } else {
-    batterUp.strikes = 0;
-    batterUp.balls = 0;
-    batterUp.fouls = 0;
+    item.strikes = 0;
+    item.balls = 0;
+    item.fouls = 0;
 
-    if (batterUp.outs < 3) {
-      batterUp.outs++;
+    if (item.outs < 3) {
+      item.outs++;
     }
   }
-  return batterUp;
+  return item;
 };
 
-const ball = batterUp => {
-  if (batterUp.balls < 4) {
-    batterUp.balls++;
+const ball = item => {
+  if (item.balls < 3) {
+    item.balls++;
   } else {
-    batterUp.strikes = 0;
-    batterUp.balls = 0;
-    batterUp.fouls = 0;
+    item.strikes = 0;
+    item.balls = 0;
+    item.fouls = 0;
   }
 
-  return batterUp;
+  return item;
 };
 
-const foul = batterUp => {
-  if (batterUp.fouls < 3) {
-    batterUp.fouls++;
-  }
-  return batterUp;
-};
-
-const out = batterUp => {
-  if (batterUp.outs < 3) {
-    batterUp.outs++;
-    batterUp.strikes = 0;
-    batterUp.balls = 0;
-    batterUp.fouls = 0;
+const foul = item => {
+  if (item.strikes < 2) {
+    item.fouls++;
+    item.strikes++;
   } else {
-    batterUp.outs = 0;
-    batterUp.strikes = 0;
-    batterUp.balls = 0;
-    batterUp.fouls = 0;
+    item.fouls++;
+  }
+
+  return item;
+};
+
+const out = item => {
+  if (item.outs < 3) {
+    item.outs++;
+    item.strikes = 0;
+    item.balls = 0;
+    item.fouls = 0;
+  } else {
+    item.outs = 0;
+    item.strikes = 0;
+    item.balls = 0;
+    item.fouls = 0;
   }
 };
 
-module.exports = { strike, ball, foul, out };
+const hit = item => {
+  item.strikes = 0;
+  item.balls = 0;
+  item.hits++;
+
+  return item;
+};
+
+module.exports = { strike, ball, foul, out, hit };
