@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Display from './display.js'
+
 
 class Dashboard extends Component {
   constructor(props) {
@@ -21,7 +21,6 @@ class Dashboard extends Component {
         strikes: prevState.strikes + 1
       }))
     } else {
-      alert('strikeout');
       this.setState(prevState => ({
         balls: 0,
         strikes: 0,
@@ -35,7 +34,7 @@ class Dashboard extends Component {
 
   isInningOver() {
     if (this.state.outs === 3) {
-      alert('Inning Over');
+      
       this.setState(prevState => ({
         balls: 0,
         strikes: 0,
@@ -49,7 +48,7 @@ class Dashboard extends Component {
     this.setState(prevState => ({
       balls: prevState.balls + 1 
     }))
-  } else  if (this.state.balls === 3){alert('Walk'); this.setState({
+  } else  if (this.state.balls === 3){this.setState({
     balls: 0,
     strikes: 0
   })
@@ -57,23 +56,33 @@ class Dashboard extends Component {
 }
 
 foul = () => {
+ if(this.state.strikes < 2){
+     this.setState(prevState => ({
+         strikes: prevState.strikes + 1
+     }))
+ }
 
   }
 
   hit = () => {
-
+    this.setState({
+        balls: 0,
+        strikes: 0,
+    })
   }
 
 
   render() {
-    { console.log(this.state) }
+   
     return (
       <div>
-        <Display count={this.state} />
         <button onClick={() => this.strike()}>Strike</button>
         <button onClick={() => this.ball()}>Ball</button>
-        <button>Foul</button>
-        <button>Hit</button>
+        <button onClick={() => this.foul()}>Foul</button>
+        <button onClick= {() => this.hit()}>Hit</button>
+        <h2 data-testid='strikes'>{this.state.strikes}</h2>
+        <h2 data-testid='balls'>{this.state.balls}</h2>
+        <h2 data-testid='outs'>{this.state.outs}</h2>
 
       </div>
      
@@ -81,4 +90,4 @@ foul = () => {
   }
 }
 
-export default Dashboard
+export default Dashboard;
