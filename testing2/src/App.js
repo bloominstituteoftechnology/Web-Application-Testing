@@ -1,28 +1,86 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Display from './components/display';
+import Dashboard from './components/dashboard';
 
-class App extends Component {
+class App extends React.Component {
+  state = {
+    strike: 0,
+    ball: 0,
+    foul: 0,
+    hit: 0,
+  }
+  addStrike = (e) => {
+    e.preventDefault();
+    if (this.state.strike < 2) {
+      this.setState({
+        strike: this.state.strike + 1
+      })
+    } else {
+      this.setState({
+        strike: 0,
+        ball: 0
+      })
+    }
+  }
+  addBall = (e) => {
+    e.preventDefault();
+    if (this.state.ball < 3) {
+      this.setState({
+        ball: this.state.ball + 1
+      })
+    } else {
+      this.setState({
+        strike: 0,
+        ball: 0
+      })
+    }
+  }
+  addFoul = (e) => {
+    e.preventDefault();
+    if (this.state.strike < 2) {
+      this.setState({
+        strike: this.state.strike + 1
+      })
+    } else {
+      this.setState({
+        ...this.state
+      })
+    }
+  }
+  addHit = (e) => {
+    e.preventDefault();
+    this.setState({
+      hit: this.state.hit + 1,
+      strike: 0,
+      ball: 0
+    })
+  }
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+    return ( 
+      <div>
+      <Display strikes = {
+        this.state.strike
+      }
+      balls = {
+        this.state.ball
+      }
+      /> <
+      Dashboard addStrike = {
+        this.addStrike
+      }
+      addBall = {
+        this.addBall
+      }
+      addFoul = {
+        this.addFoul
+      }
+      addHit = {
+        this.addHit
+      }
+      /> 
       </div>
     );
   }
 }
-
 export default App;
