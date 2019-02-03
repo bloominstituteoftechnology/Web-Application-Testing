@@ -41,10 +41,10 @@ class Dashboard extends React.Component {
         console.log(this.state.strikes)
         return(
             <>
-                <button onClick={this.increment}>Strike</button>
-                <button onClick={this.incrementBall}>Ball</button>
+                <button data-testid="strikeButton" onClick={this.increment}>Strike</button>
+                <button data-testid="ballButton" onClick={this.incrementBall}>Ball</button>
                 <button>Foul</button>
-                <button onClick={this.hitBall}>Hit</button>
+                <button data-testid="hitButton" onClick={this.hitBall}>Hit</button>
                 <h1> Current Strike: {this.state.strikes}</h1>
                 <h1> Current Balls: {this.state.balls}</h1>
 

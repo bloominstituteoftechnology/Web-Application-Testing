@@ -13,7 +13,7 @@ class Display extends React.Component {
             <>
                 <h1>Display</h1>
                 <h3>Balls</h3>
-                <div data-testid="count">{this.props.balls}</div>
+                <span data-testid="count">{this.props.balls}</span>
                 <h3> Strikes </h3>
                 <div data-testid="strike">{this.props.strikes}</div>
             </>
