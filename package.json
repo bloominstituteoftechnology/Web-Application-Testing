@@ -1,0 +1,12 @@
+{
+  "name": "testing-ii",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/FreeKeyBoy/testing-ii.git",
+  "author": "Freekeyboy <jjhutton81@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "jest-dom": "^3.0.1",
+    "react-testing-library": "^5.4.4"
+  }
+}
