@@ -68,7 +68,7 @@ class Dashboard extends React.Component{
             <div className = 'dashboard-container'>
                 <Display state = {this.state}/>
                 <div className  = 'dash-sub'>
-                    <h3 className = 'ball-button, button' onClick = {this.ballHandler}><i class="fas fa-sad-tear"></i>Bawl <i class="fas fa-sad-tear"></i></h3>
+                    <h3 data-testid = 'bawl-header' className = 'ball-button, button' onClick = {this.ballHandler}><i class="fas fa-sad-tear"></i>Bawl <i class="fas fa-sad-tear"></i></h3>
                     <h3 className = 'strike-button, button' onClick = {this.strikeHandler}>Strike</h3>
                 
                     <h3 className = 'hit-button, button' onClick = {this.hitMaker}>Hit!</h3>
