@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Button, ButtonGroup } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
  import Display from "./Display";
- import { strike, ball, foul, out } from "../helpers/playBall";
+ import { strike, ball, foul, hit } from "../helpers/playBall";
 
  import styled from "styled-components";
 
@@ -22,24 +22,71 @@ export default class Dashboard extends Component {
     outs: 0
   };
   
+  callStrike = event => {
+    event.preventDefault();
+    strike(this.state);
+    console.log(this.state);
+  };
+
+   callBall = event => {
+    event.preventDefault();
+    ball(this.state);
+    console.log(this.state);
+  };
+
+   callFoul = event => {
+    event.preventDefault();
+    foul(this.state);
+    console.log(this.state);
+  };
+
+   callHit = event => {
+    event.preventDefault();
+    hit(this.state);
+    console.log(this.state);
+  };
+
   render() {
     return (
       <div>
-        <Display />
+        <Display 
+          balls={this.state.balls}
+          strikes={this.state.strikes}
+          hits={this.state.hits}
+          fouls={this.state.fouls}
+          outs={this.state.outs}
+        />
           <ButtonContainer>
-            <Button variant="danger" size="lg" style={{ marginBottom: "10px" }}>
+            <Button 
+              variant="danger" 
+              size="lg" 
+              style={{ marginBottom: "10px" }}
+              onClick={this.callStrike}
+            >
               Strike!
           </Button>
             <Button
               variant="secondary"
               size="lg"
               style={{ marginBottom: "10px" }}
-            >Ball!
+              onClick={this.callBall}
+            >
+              Ball!
           </Button>
-          <Button variant="warning" size="lg" style={{ marginBottom: "10px" }}>
+          <Button 
+            variant="warning" 
+            size="lg" 
+            style={{ marginBottom: "10px" }}
+            onClick={this.callFoul}
+          >
             Foul!
           </Button>
-          <Button variant="success" size="lg" style={{ marginBottom: "10px" }}>
+          <Button 
+            variant="success" 
+            size="lg" 
+            style={{ marginBottom: "10px" }}
+            onClick={this.callHit}
+          >
             Hit!
           </Button>
           </ButtonContainer>
