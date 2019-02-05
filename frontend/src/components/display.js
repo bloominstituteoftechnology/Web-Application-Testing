@@ -8,6 +8,7 @@ class Display extends React.Component {
         hit: false
     }
 
+
     render(){
         return(
             <>

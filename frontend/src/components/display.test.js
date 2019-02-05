@@ -1,9 +1,11 @@
 import React from 'react';
-import { render, fireEvent, cleanup } from 'react-testing-library';
-import 'jest-dom/extend-expect';
+import { render, fireEvent, cleanup } from 'react-testing-library';   // built in assertions
+import 'jest-dom/extend-expect';  
 import Display from './display';
 import Dashboard from './dashboard';
+import Diandra from './diandra';
 
+import 'react-testing-library/cleanup-after-each';  //might be redundant with afterEach(cleanup)
 
 afterEach(cleanup)
 
@@ -73,3 +75,47 @@ describe('The Dashboard Component', () => {
         expect(firstRender).toMatchDiffSnapshot(component2.asFragment());
     });
 })
+
+// Diandra Approach
+
+// react-testing-library 'enforce good practices' focus on behavior (not state, props)
+// jest-dom is nice, but not as important
+
+
+// User Stories (one recommended form of writing requirements); get 'out' of developer brain
+// As a _______ I want ______ so that _____
+// As a scoreboard tech I want to see the current number of strikes and balls
+// so that I know when a player has struck out
+
+
+// [Diandra would only test this]
+// display the count of balls and strikes for the at-bat.
+
+// describe('The Display Component Diandra', () => {
+//     it('renders the correct count of balls and strikes', () => {
+//         const component = render(<Display balls="2" strikes="1"/>);
+
+//         component.getByText(/2 balls/i);
+//         component.getByText(/1 strikes/i);
+//         // const element = component.getByText(/1 strikes/i);
+//         // expect(element).toHaveTextContent(/2 balls/i);
+//     });
+// })
+
+describe('The Diandra Component', () => {
+    it('renders the correct count of balls and strikes', () => {
+        const { getByText } = render(<Diandra balls="2" strikes="1"/>);
+
+        getByText(/2 balls/i);
+        getByText(/1 strikes/i);
+    });
+
+    it('render display header', () => {
+        console.log('document', document.body.outerHTML);
+    });
+})
+
+// [These three are triggered from Dashboard]
+// resets both balls and strikes to 0 when a player reaches 3 strikes or 4 balls.
+// resets both balls and strikes to 0 when a player connects any type of hit.
+// should be updated when the user records activity on the Dashboard component.
