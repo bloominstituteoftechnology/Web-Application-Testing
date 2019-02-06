@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
-import Display from './Display';
+
 
 export default class Dashboard extends Component {
+  state = {
+     
+  }
   render() {
     return (
       <div>
