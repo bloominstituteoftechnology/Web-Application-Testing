@@ -23,4 +23,18 @@ describe('The App Component', () => {
 
     expect(ballsCount).toHaveTextContent('2');
   })
+
+  test('strike count add one when button clicked', () => {
+    const app = render(<App />);
+    const strikeButton = app.getByTestId(/strikebutton/i)
+
+    fireEvent.click(strikeButton);
+
+    const strikesCount = app.getByTestId(/strikescount/i);
+    expect(strikesCount).toHaveTextContent('1');
+
+    fireEvent.click(strikeButton);
+
+    expect(strikesCount).toHaveTextContent('2');
+  })
 })

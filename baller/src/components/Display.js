@@ -18,6 +18,13 @@ export class Display extends Component {
     });
   }
 
+  strikeHandler = e => {
+    e.preventDefault();
+    this.setState({
+      strikes: this.state.strikes + 1
+    });
+  }
+
   render() {
     return (
       <div>
@@ -28,6 +35,7 @@ export class Display extends Component {
         <p data-testid='strikesCount'>{this.state.strikes}</p>
         <Dashboard 
         ballHandler={this.ballHandler}
+        strikeHandler={this.strikeHandler}
         />
       </div>
     )
