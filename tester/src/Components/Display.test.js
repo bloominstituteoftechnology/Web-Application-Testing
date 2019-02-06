@@ -11,13 +11,31 @@ describe('The Display Component', () => {
     
     it('render display header', () => {
         const component = render(<Display />)
-        const header = component.getByTestId('headerH3');
+        const header = component.getByTestId('balls');
         expect(header).toHaveTextContent(/balls/i)
     });
 
     it('render display header', () => {
         const component = render(<Display />)
-        const header2 = component.getByTestId('headerH32');
+        const header2 = component.getByTestId('strikes');
         expect(header2).toHaveTextContent(/strikes/i)
+    });
+
+    it('render display header', () => {
+        const component = render(<Display />)
+        const fouls = component.getByTestId('fouls');
+        expect(fouls).toHaveTextContent(/fouls/i)
+    });
+
+    it('render display header', () => {
+        const component = render(<Display />)
+        const hits = component.getByTestId('hits');
+        expect(hits).toHaveTextContent(/hits/i)
+    });
+
+    it('render display header', () => {
+        const component = render(<Display />)
+        const outs = component.getByTestId('outs');
+        expect(outs).toHaveTextContent(/outs/i)
     });
 });
