@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import Button  from '../styled/Button';
 
 export default class Dashboard extends Component {
   state = {
@@ -8,14 +8,10 @@ export default class Dashboard extends Component {
   render() {
     return (
       <div>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-        <div>
-          <Display></Display>
-        </div>
+        <Button>Strike</Button>
+        <Button>Ball</Button>
+        <Button>Hit</Button>
+        <Button>Foul</Button>
       </div>
     )
   }
