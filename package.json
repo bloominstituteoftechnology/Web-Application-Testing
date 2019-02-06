@@ -10,6 +10,7 @@
   "author": "<kyleteeter12@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "gitignore": "^0.6.0"
+    "gitignore": "^0.6.0",
+    "react-dom": "^16.7.0"
   }
 }
