@@ -1,0 +1,11 @@
+{
+  "name": "testing-ii",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/atonymartin20/testing-ii.git",
+  "author": "Alex Martin <atonymartin20@yahoo.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^24.0.0"
+  }
+}
