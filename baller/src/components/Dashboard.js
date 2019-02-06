@@ -8,7 +8,7 @@ export class Dashboard extends Component {
                 <button data-testid='strikeButton' onClick={this.props.strikeHandler}>Strike</button>
                 <button data-testid='ballButton' onClick={this.props.ballHandler}>Ball</button>
                 <button data-testid='foulButton'>Foul</button>
-                <button data-testid='hitButton'>Hit</button>
+                <button data-testid='hitButton' onClick={this.props.hitHandler}>Hit</button>
             </div>
         )
     }

@@ -34,7 +34,22 @@ describe('The App Component', () => {
     expect(strikesCount).toHaveTextContent('1');
 
     fireEvent.click(strikeButton);
-
     expect(strikesCount).toHaveTextContent('2');
+
+    fireEvent.click(strikeButton);
+    expect(strikesCount).toHaveTextContent('0');
   })
+
+  test('strike count and ball count reset to 0 when hit', () => {
+    const app = render(<App />);
+    const hitButton = app.getByTestId(/hitbutton/i)
+
+    fireEvent.click(hitButton);
+
+    const ballsCount = app.getByTestId(/ballsCount/i);
+    const strikesCount = app.getByTestId(/strikescount/i);
+    expect(ballsCount).toHaveTextContent('0');
+    expect(strikesCount).toHaveTextContent('0');
+  })
+
 })
