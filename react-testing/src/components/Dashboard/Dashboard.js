@@ -7,13 +7,13 @@ export default class Dashboard extends Component {
 
   }
   render() {
-     console.log(props);
+    //  console.log(this.props);
     return (
       <div>
-        <Button data-testid='strike-button' onClick={props.reset}>Strike</Button>
-        <Button data-testid='ball-button' onClick={props.reset}>>Ball</Button>
-        <Button data-testid='hit-button'>Hit</Button>
-        <Button data-testid='foul-button'>Foul</Button>
+        <Button data-testid='strike-button' onClick={this.props.resetStrikes}>Strike</Button>
+        <Button data-testid='ball-button'   onClick={this.props.resetBalls}>Ball</Button>
+        <Button data-testid='hit-button'    onClick={this.props.resetHits}>Hit</Button>
+        <Button data-testid='foul-button'   onClick={this.props.resetFouls}>Foul</Button>
       </div>
     )
   }

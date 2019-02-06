@@ -4,12 +4,13 @@ const Display = props => {
    const {balls, strikes } = props;
    return(
      <>
-        <h3>Counts</h3>
+        <h1 data-testid='header'>Counts</h1>
         <div>
-           {balls} balls and {strikes} strikes
+          <h1 data-testid='ball'> Balls:{balls}</h1>
+          <h1 data-testid='strike'> Strikes:{strikes}</h1>
         </div>
      </>
-   );
+   ); 
 }
 
 export default Display;

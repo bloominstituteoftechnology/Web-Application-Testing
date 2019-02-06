@@ -70,11 +70,9 @@ resetHits = event=> {
                     resetHits={this.resetHits}
                     resetFouls={this.resetFouls}
                     />
-          <Display   resetBalls={this.resetBalls}
-                    resetStrikes ={this.resetStrikes}
-                    resetHits={this.resetHits}
-                    resetFouls={this.resetFouls}
-                      />
+          <Display  balls={this.state.balls}
+                    strikes={this.state.strikes} 
+                    />
       </div>
     )
   }
