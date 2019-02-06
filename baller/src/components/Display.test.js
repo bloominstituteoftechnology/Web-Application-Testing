@@ -1,7 +1,9 @@
 import React from 'react';
 import Display from './Display';
-import { render } from 'react-testing-library';
+import { render, cleanup } from 'react-testing-library';
 import 'jest-dom/extend-expect';
+
+afterEach(cleanup);
 
 describe('The Display Component', () => {
   test('renders without crashing', () => {
@@ -9,9 +11,8 @@ describe('The Display Component', () => {
   });
 
   test('display balls title', () => {
-    const display = render(<Display />);
-    const ballsCount = display.getByTestId(/balls/i);
-    expect(ballsCount).toHaveTextContent(/balls count/i);
+    const { getByText} = render(<Display />);
+    getByText(/balls count/i);
   })
 
   test('display balls count', () => {
@@ -21,9 +22,8 @@ describe('The Display Component', () => {
   })
 
   test('display strikes title', () => {
-    const display = render(<Display />);
-    const strikesCount = display.getByTestId('strikes');
-    expect(strikesCount).toHaveTextContent(/strikes count/i);
+    const { getByText} = render(<Display />);
+    getByText(/strikes count/i);
   })
 
   test('display strikes count', () => {

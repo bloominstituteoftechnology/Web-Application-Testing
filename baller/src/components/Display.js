@@ -22,9 +22,9 @@ export class Display extends Component {
     return (
       <div>
         <h2>Display</h2>
-        <p data-testid='balls'>Balls Count</p>
+        <p>Balls Count</p>
         <p data-testid='ballsCount'>{this.state.balls}</p>
-        <p data-testid='strikes'>Strikes Count</p>
+        <p>Strikes Count</p>
         <p data-testid='strikesCount'>{this.state.strikes}</p>
         <Dashboard 
         ballHandler={this.ballHandler}
