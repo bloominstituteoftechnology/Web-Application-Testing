@@ -17,7 +17,7 @@ describe('APP renders and functions', ()=>{
    fireEvent.click(button);
    expect(strikes).toHaveTextContent(1);
   }),
-  it('fires balls all over the place', ()=>{
+  it('fires balls', ()=>{
     const component = render(<App />);
 
     const button = component.getByText('ball');
@@ -25,6 +25,16 @@ describe('APP renders and functions', ()=>{
 
     fireEvent.click(button);
     expect(balls).toHaveTextContent(1);
+  }),
+  it('fires foul', ()=>{
+    const component = render(<App/>);
+
+    const button = component.getByText('foul');
+    const foul = component.getByText('Fouls:');
+
+    fireEvent.click(button);
+    fireEvent.click(button);
+    expect(foul).toHaveTextContent(2);
   })
 
 })
