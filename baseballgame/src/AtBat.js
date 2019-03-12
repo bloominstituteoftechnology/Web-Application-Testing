@@ -69,7 +69,10 @@ class AtBat extends Component {
                 <div>
                     <h2>Scoreboard</h2>
                     <h2>_____________</h2>
-                    <h3>{` Ball ${this.state.ball} - Strike ${this.state.strike} - Foul ${this.state.foul} - Hits ${this.state.hit}`}</h3>
+                    <h3>{` Ball ${this.state.ball}`}</h3>
+                    <h3>{` Strike ${this.state.strike}`}</h3>
+                    <h3>{` Foul ${this.state.foul}`}</h3>
+                    <h3>{` Hits ${this.state.hit}`}</h3>
                     <br></br>
                     <br></br>
                 </div>
