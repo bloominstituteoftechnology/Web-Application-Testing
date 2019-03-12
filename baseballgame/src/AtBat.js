@@ -9,19 +9,24 @@ class AtBat extends Component {
         hit: 0,
     }
   
+    fouls = () => {
+        let bradey = this.state.foul
+        this.setState({ foul: bradey+1 });
+    };
 
     render() {
         return (
             <div>
                 <div>
 
-                <h2>Player At Bat</h2>
-                <br></br>
-                <h3>Ball</h3>
-                <h3>Strike</h3>
-                <h3>Foul</h3>
-                <h3>Hit</h3>
-                <hr></hr>       
+                    <h2>Player At Bat</h2>
+                    <br></br>
+                    <h3>Ball</h3>
+                    <button onClick={this.fouls}>Ball!</button>
+                    <h3>Strike</h3>
+                    <h3>Foul</h3>
+                    <h3>Hit</h3>
+                    <hr></hr>       
                 </div>
                 <div>
                     <h2>Scoreboard</h2>
@@ -34,6 +39,11 @@ class AtBat extends Component {
         );
 
     }
+
+  
+
+
+
 }
 
 export default AtBat;
