@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class AtBat extends Component {
 
     state = {
-        balls: 0,
-        strikes: 0,
+        ball: 0,
+        strike: 0,
         foul: 0,
         hit: 0,
     }
@@ -12,6 +12,41 @@ class AtBat extends Component {
     fouls = () => {
         let bradey = this.state.foul
         this.setState({ foul: bradey+1 });
+        if (this.state.strike < 2) {
+            this.strikes()
+        } 
+    };
+
+    balls = () => {
+        let bradey = this.state.ball
+        this.setState({ ball: bradey+1 });
+        if (this.state.ball === 4){
+            this.reset()
+        }
+    };
+
+    strikes = () => {
+        let bradey = this.state.strike
+        this.setState({ strike: bradey+1 });
+        if (this.state.strike >= 3){
+            this.reset()
+        }
+    };
+
+    reset = () => {
+        this.setState({
+            ball: 0,
+            strike: 0,
+            foul: 0,
+        })
+    }
+
+
+    hits = () => {
+        let bradey = this.state.hit
+        this.setState({ hit: bradey+1 });
+        this.reset()
+        
     };
 
     render() {
@@ -22,16 +57,19 @@ class AtBat extends Component {
                     <h2>Player At Bat</h2>
                     <br></br>
                     <h3>Ball</h3>
-                    <button onClick={this.fouls}>Ball!</button>
+                    <button onClick={this.balls}>Ball!</button>
                     <h3>Strike</h3>
+                    <button onClick={this.strikes}>Strike!</button>
                     <h3>Foul</h3>
+                    <button onClick={this.fouls}>Foul!</button>
                     <h3>Hit</h3>
+                    <button onClick={this.hits}>Hit!</button>
                     <hr></hr>       
                 </div>
                 <div>
                     <h2>Scoreboard</h2>
                     <h2>_____________</h2>
-                    <h3>{` Ball ${this.state.balls} - Strike ${this.state.strikes} - Foul ${this.state.foul} - Hits ${this.state.hit}`}</h3>
+                    <h3>{` Ball ${this.state.ball} - Strike ${this.state.strike} - Foul ${this.state.foul} - Hits ${this.state.hit}`}</h3>
                     <br></br>
                     <br></br>
                 </div>
