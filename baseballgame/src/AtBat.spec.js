@@ -43,6 +43,40 @@ describe('<AtBat />', () => {
         expect(text).toBe(text2);
     })
 
+    it('should do add to ball count... lol', () => {
+        const { getByText } = render(<AtBat />);
 
+        const text = getByText(/ball 0/i);
+        
+        fireEvent.click(getByText(/ball!/i));
+
+        const text2 = getByText(/ball 1/i);
+
+        expect(text).toBe(text2);
+    })
+
+    it('should do add to strike count... damn unions ;p', () => {
+        const { getByText } = render(<AtBat />);
+
+        const text = getByText(/strike 0/i);
+        
+        fireEvent.click(getByText(/strike!/i));
+
+        const text2 = getByText(/strike 1/i);
+
+        expect(text).toBe(text2);
+    })
+
+    it('should do add to hit count... like we can beat Trent Reznor', () => {
+        const { getByText } = render(<AtBat />);
+
+        const text = getByText(/hit 0/i);
+        
+        fireEvent.click(getByText(/hit!/i));
+
+        const text2 = getByText(/hit 1/i);
+
+        expect(text).toBe(text2);
+    })
 
 })
