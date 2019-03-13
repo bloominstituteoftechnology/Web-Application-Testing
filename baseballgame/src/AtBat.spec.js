@@ -97,4 +97,24 @@ describe('<AtBat />', () => {
         expect(text2).toBe(text4);
 
     })
+
+    it('should do other things to... like resetting on hit', () => {
+        const { getByText } = render(<AtBat />);
+
+        const text1 = getByText(/strike 1/i);
+        const text2 = getByText(/foul 1/i);
+        const text5 = getByText(/ball 0/i);
+
+        fireEvent.click(getByText(/hit!/i));
+
+        const text3 = getByText(/strike 0/i);
+        const text4 = getByText(/foul 0/i);
+        const text6 = getByText(/ball 0/i);
+
+        expect(text1).toBe(text3);
+        expect(text2).toBe(text4);
+        expect(text5).toBe(text6);
+
+    })
+
 })
