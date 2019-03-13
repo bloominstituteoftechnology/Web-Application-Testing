@@ -55,28 +55,46 @@ describe('<AtBat />', () => {
         expect(text).toBe(text2);
     })
 
-    it('should do add to strike count... damn unions ;p', () => {
+    it('should do add to strike count... darn unions', () => {
         const { getByText } = render(<AtBat />);
 
-        const text = getByText(/strike 0/i);
+        const text = getByText(/strike 1/i);
         
         fireEvent.click(getByText(/strike!/i));
 
-        const text2 = getByText(/strike 1/i);
+        const text2 = getByText(/strike 2/i); 
 
         expect(text).toBe(text2);
     })
+    
+    
 
     it('should do add to hit count... like we can beat Trent Reznor', () => {
         const { getByText } = render(<AtBat />);
 
-        const text = getByText(/hit 0/i);
+        const text = getByText(/hits 0/i);
         
         fireEvent.click(getByText(/hit!/i));
 
-        const text2 = getByText(/hit 1/i);
+        const text2 = getByText(/hits 1/i);
 
         expect(text).toBe(text2);
     })
 
+
+    it('should do other things to... like fouls adding to strikes', () => {
+        const { getByText } = render(<AtBat />);
+
+        const text1 = getByText(/strike 0/i);
+        const text2 = getByText(/foul 0/i);
+
+        fireEvent.click(getByText(/foul!/i));
+
+        const text3 = getByText(/strike 1/i);
+        const text4 = getByText(/foul 1/i);
+
+        expect(text1).toBe(text3);
+        expect(text2).toBe(text4);
+
+    })
 })

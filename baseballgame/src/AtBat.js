@@ -56,13 +56,13 @@ class AtBat extends Component {
 
                     <h2>Player At Bat</h2>
                     <br></br>
-                    <h3>Ball</h3>
+                    <h3>Ball-</h3>
                     <button onClick={this.balls}>Ball!</button>
-                    <h3>Strike</h3>
+                    <h3>Strike-</h3>
                     <button onClick={this.strikes}>Strike!</button>
-                    <h3>Foul</h3>
+                    <h3>Foul-</h3>
                     <button onClick={this.fouls}>Foul!</button>
-                    <h3>Hit</h3>
+                    <h3>Hit-</h3>
                     <button onClick={this.hits}>Hit!</button>
                     <hr></hr>       
                 </div>
