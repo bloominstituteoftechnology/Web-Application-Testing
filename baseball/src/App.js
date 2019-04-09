@@ -1,28 +1,57 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+const App = () => {
+	const initStats = {
+		strikes: 0,
+		balls: 0,
+		fouls: 0,
+		hits: 0,
+		outs: 0,
+		runs: 0,
+	};
+	const [stats, setStats] = useState(initStats);
+
+	const strike = e => {
+		e.preventDefault();
+		if (stats.strikes < 2) {
+			setStats({
+				...stats,
+				strikes: stats.strikes + 1,
+			});
+		} else {
+			setStats({
+				...stats,
+				strikes: 0,
+				outs: stats.outs + 1,
+			});
+		}
+	};
+
+	return (
+		<>
+			<h1>At-Bat</h1>
+			<div>
+				<button onClick={strike}>Strike</button>
+				<button>Ball</button>
+				<button>Foul</button>
+				<button>Hit</button>
+			</div>
+
+			<div>
+				<h2>Count</h2>
+				<p>Strikes: {stats.strikes}</p>
+				<p>Balls: {stats.balls}</p>
+				<p>Fouls: {stats.fouls}</p>
+			</div>
+			<div>
+				<h2>Total</h2>
+				<p>Hits: {stats.hits}</p>
+				<p>Outs: {stats.outs}</p>
+				<p>Runs: {stats.runs}</p>
+			</div>
+		</>
+	);
+};
 
 export default App;
