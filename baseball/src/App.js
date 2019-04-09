@@ -44,13 +44,29 @@ const App = () => {
 		}
 	};
 
+	const foul = e => {
+		e.preventDefault();
+		if (stats.strikes < 2) {
+			setStats({
+				...stats,
+				strikes: stats.strikes + 1,
+				fouls: stats.fouls + 1,
+			});
+		} else {
+			setStats({
+				...stats,
+				fouls: stats.fouls + 1,
+			});
+		}
+	};
+
 	return (
 		<>
 			<h1>At-Bat</h1>
 			<div>
 				<button onClick={strike}>Strike</button>
 				<button onClick={ball}>Ball</button>
-				<button>Foul</button>
+				<button onClick={foul}>Foul</button>
 				<button>Hit</button>
 			</div>
 
@@ -58,11 +74,9 @@ const App = () => {
 				<h2>Count</h2>
 				<p>Strikes: {stats.strikes}</p>
 				<p>Balls: {stats.balls}</p>
-				<p>Fouls: {stats.fouls}</p>
 			</div>
 			<div>
 				<h2>Total</h2>
-				<p>Hits: {stats.hits}</p>
 				<p>Outs: {stats.outs}</p>
 				<p>Runs: {stats.runs}</p>
 			</div>
