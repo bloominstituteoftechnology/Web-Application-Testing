@@ -1,0 +1,8 @@
+{
+  "name": "testing-ii",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/korghal/testing-ii.git",
+  "author": "Jason Hedrick <jasonleehedrick@gmail.com>",
+  "license": "MIT"
+}
