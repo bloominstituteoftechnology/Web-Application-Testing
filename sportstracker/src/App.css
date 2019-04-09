@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Codystar|Shrikhand');
+
+body {
+  background-color: forestgreen;
+}
+
+.App {
+  text-align: center;
+}
+
+#abi {
+  font-family: 'Shrikhand', cursive;
+  color: white;
+  font-size: 48px;
+}
+
+#sign {
+  border: 4px ridge white;
+  width: 50%;
+  margin: 20px auto;
+  background-color: black;
+  font-family: 'Codystar', cursive;
+  color: gold;
+}
+
+button {
+  height: 30px; 
+  width: 75px;
+  font-weight: bold;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 6px yellow;
+}
