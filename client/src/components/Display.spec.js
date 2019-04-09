@@ -19,3 +19,5 @@ import Display from "./Display";
     expect(strikes).toHaveTextContent(/Strikes/i);
   });
 });
+
+

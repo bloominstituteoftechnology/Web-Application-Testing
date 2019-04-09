@@ -34,3 +34,5 @@ import Dashboard from "./Dashboard";
     expect(hitBtn).toHaveTextContent(/hit/i);
   });
 });
+
+
