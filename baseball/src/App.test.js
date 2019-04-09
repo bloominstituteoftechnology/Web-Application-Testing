@@ -65,3 +65,16 @@ describe('Fouls', () => {
 		getByText('Strikes: 2');
 	});
 });
+
+describe('Hits', () => {
+	it('Resets balls and strikes to 0', () => {
+		const { getByText } = render(<App />);
+		const hitBtn = getByText('Hit');
+		const strikeBtn = getByText('Strike');
+		const ballBtn = getByText('Ball');
+		fireEvent.click(strikeBtn);
+		fireEvent.click(ballBtn);
+		fireEvent.click(hitBtn);
+		getByText('Strikes: 0');
+	});
+});

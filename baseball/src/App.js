@@ -5,7 +5,6 @@ const App = () => {
 	const initStats = {
 		strikes: 0,
 		balls: 0,
-		fouls: 0,
 		hits: 0,
 		outs: 0,
 		runs: 0,
@@ -50,28 +49,37 @@ const App = () => {
 			setStats({
 				...stats,
 				strikes: stats.strikes + 1,
-				fouls: stats.fouls + 1,
 			});
 		} else {
 			setStats({
 				...stats,
-				fouls: stats.fouls + 1,
 			});
 		}
+	};
+
+	const hit = e => {
+		e.preventDefault();
+		setStats({
+			...stats,
+			strikes: 0,
+			balls: 0,
+			runs: stats.runs + 1,
+		});
 	};
 
 	return (
 		<>
 			<h1>At-Bat</h1>
 			<div>
+				<h2>Dashboard</h2>
 				<button onClick={strike}>Strike</button>
 				<button onClick={ball}>Ball</button>
 				<button onClick={foul}>Foul</button>
-				<button>Hit</button>
+				<button onClick={hit}>Hit</button>
 			</div>
 
 			<div>
-				<h2>Count</h2>
+				<h2>Display</h2>
 				<p>Strikes: {stats.strikes}</p>
 				<p>Balls: {stats.balls}</p>
 			</div>
