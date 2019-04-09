@@ -28,12 +28,28 @@ const App = () => {
 		}
 	};
 
+	const ball = e => {
+		e.preventDefault();
+		if (stats.balls < 3) {
+			setStats({
+				...stats,
+				balls: stats.balls + 1,
+			});
+		} else {
+			setStats({
+				...stats,
+				balls: 0,
+				runs: stats.runs + 1,
+			});
+		}
+	};
+
 	return (
 		<>
 			<h1>At-Bat</h1>
 			<div>
 				<button onClick={strike}>Strike</button>
-				<button>Ball</button>
+				<button onClick={ball}>Ball</button>
 				<button>Foul</button>
 				<button>Hit</button>
 			</div>

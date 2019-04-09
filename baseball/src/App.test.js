@@ -23,3 +23,24 @@ describe('Strikes', () => {
 		getByText(/outs: 1/i);
 	});
 });
+
+describe('Balls', () => {
+	it('Increases ball count', () => {
+		const { getByText } = render(<App />);
+		const button = getByText(/ball/i);
+
+		fireEvent.click(button);
+		getByText(/balls: 1/i);
+	});
+
+	it('balls do not go above 3', () => {
+		const { getByText } = render(<App />);
+		const button = getByText(/ball/i);
+		fireEvent.click(button);
+		fireEvent.click(button);
+		fireEvent.click(button);
+		fireEvent.click(button);
+		getByText(/balls: 0/i);
+		getByText(/runs: 1/i);
+	});
+});
