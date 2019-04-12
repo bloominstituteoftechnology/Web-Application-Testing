@@ -1,0 +1,13 @@
+{
+  "name": "webtesting-ii-challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/theiseja/webtesting-ii-challenge",
+  "author": "Jesse Theisen <theiseja@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jest": "^24.7.1",
+    "jest-dom": "^3.1.3",
+    "react-testing-library": "^6.1.2"
+  }
+}
