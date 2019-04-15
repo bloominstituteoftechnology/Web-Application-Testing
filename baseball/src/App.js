@@ -1,28 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
+import Display from './components/Display';
+import Dashboard from './components/Dashboard';
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+  constructor(props) {
+    super(props);
+    this.state = {
+      balls: 0,
+      strikes: 0,
+    };
   }
-}
 
+  ballIncrease = e => {
+    this.setState(prevState => {
+      return {
+        balls: prevState.balls + 1,
+      }
+    })
+  };
+}
 export default App;
