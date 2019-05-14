@@ -1,0 +1,20 @@
+{
+  "name": "webtesting-ii-challenge",
+  "version": "1.0.0",
+  "description": "In this project, you will demonstrate proficiency by writing unit tests and production code to satisfy the _Minimum Viable Product_ described below.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vud531/webtesting-ii-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vud531/webtesting-ii-challenge/issues"
+  },
+  "homepage": "https://github.com/vud531/webtesting-ii-challenge#readme"
+}
