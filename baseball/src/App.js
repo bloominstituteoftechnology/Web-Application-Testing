@@ -3,8 +3,10 @@ import './App.css';
 
 class App extends Component {
 	state = {
-		strike: 0,
-		ball: 0
+		strikes: 0,
+		balls: 0,
+		hits: 0,
+		fouls: 0
 	};
 
 	addStrike = () => {
