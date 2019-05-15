@@ -22,5 +22,8 @@ describe('<App />', () => {
 
 		const button = getByText(/strike/i);
 		fireEvent.click(button);
+
+		const button1 = getByText(/ball/i);
+		fireEvent.click(button1);
 	});
 });
