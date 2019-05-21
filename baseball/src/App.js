@@ -22,17 +22,21 @@ class App extends Component {
 	};
 
 	addStrike = () => {
-		let player = this.state.strike;
-		this.setState({
-			strike: player + 1
-		});
+		let strikes = this.state.strike;
+		if (strikes < 2) {
+			this.setState({ strike: this.state.strike + 1 });
+		} else {
+			this.setState({ strikes: 0 });
+		}
 	};
 
 	addBall = () => {
-		let player = this.state.ball;
-		this.setState({
-			ball: player + 1
-		});
+		let balls = this.state.ball;
+		if (balls < 3) {
+			this.setState({ balls: this.state.ball + 1 });
+		} else {
+			this.setState({ balls: 0 });
+		}
 	};
 
 	reset = () => {
