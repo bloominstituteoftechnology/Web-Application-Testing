@@ -18,12 +18,12 @@ describe('<App />', () => {
 	});
 
 	it('should add strikes and balls', () => {
-		const { getByText } = render(<App />);
+		const { getAllByText } = render(<App />);
 
-		const button = getByText(/strike/i);
+		const button = getAllByText(/strike/i);
 		fireEvent.click(button);
 
-		const button1 = getByText(/ball/i);
+		const button1 = getAllByText(/ball/i);
 		fireEvent.click(button1);
 	});
 });
