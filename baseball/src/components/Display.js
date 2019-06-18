@@ -3,8 +3,8 @@ import React from 'react';
 const Display = (props) => {
     return(
         <>
-            <div>balls: {`${props.getBalls()}`}</div>
-            <div>strikes: {`${props.getStrikes()}`}</div>
+            <p>balls: <span data-testid='balls'>{`${props.getBalls()}`}</span></p>
+            <p>strikes: <span data-testid='strikes'>{`${props.getStrikes()}`}</span></p>
         </>
     )
     
