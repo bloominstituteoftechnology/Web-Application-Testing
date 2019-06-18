@@ -34,7 +34,7 @@ describe("<App />", () => {
   });
 });
 
-// Testing the Stat Display 
+// Testing the Stat Display
 
 describe("<Display />", () => {
   it("should display the stats", () => {
