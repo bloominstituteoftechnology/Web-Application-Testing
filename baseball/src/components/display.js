@@ -1,20 +1,16 @@
-import React, { memo } from 'react'
-import PropTypes from 'prop-types'
+import React, { Fragment } from "react";
 
-import React from 'react'
-import PropTypes from 'prop-types'
-
-const display = (props) => {
+const display = props => {
+  console.log(props);
   return (
-    <div>
+    <Fragment>
       <ul>
-        <li> </li>
-        <li> </li>
-        <li> </li>
-        <li> </li>
+        <li>Strikes: {props.strike} </li>
+        <li>Balls: {props.ball}</li>
+        <li>Hits:{props.hit} </li>
       </ul>
-    </div>
+    </Fragment>
   );
-}
+};
 
 export default display;
