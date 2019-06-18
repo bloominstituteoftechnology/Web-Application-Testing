@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Dashboard from "./components/dashboard";
+import Display from "./components/display";
 import { render } from "@testing-library/react"; // << install this
 import "@testing-library/react/cleanup-after-each";
 
@@ -13,12 +15,41 @@ describe("<App />", () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it("renders without errors", () => {
-    const queries = render(<App />);
-    // if there are errors rendering the component, the test will fail
+  it("Should render app", () => {
+    render(<App />);
   });
 
+  it("should render number of hit when button is clicked", () => {
+    const { getByText } = render(<App />);
+    const button = getByText(/HIT/);
+    fireEvent.click(button);
+    getByText(/Hits: 1/);
+  });
 
+  it("should render number of strikes when button is clicked", () => {
+    const { getByText } = render(<App />);
+    const button = getByText(/STRIKE/);
+    fireEvent.click(button);
+    getByText(/Strikes: 1/);
+  });
 });
 
-// show an h2 with Hello World
+// Testing the Stat Display 
+
+describe("<Display />", () => {
+  it("should display the stats", () => {
+    render(<Display />);
+  });
+  it("should display the number hits on the scoreboard", () => {
+    const { getByText } = render(<App />);
+    getByText(/Hits: 0/);
+  });
+  it("should display the number balls on the scoreboard", () => {
+    const { getByText } = render(<App />);
+    getByText(/Balls: 0/);
+  });
+  it("should display the number hit on the scoreboard", () => {
+    const { getByText } = render(<App />);
+    getByText(/Hits: 0/);
+  });
+});

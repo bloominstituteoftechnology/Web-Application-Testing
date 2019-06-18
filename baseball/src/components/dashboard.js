@@ -48,6 +48,7 @@ export default class dashboard extends Component {
     }
   };
 
+  // If less than 2 two goes on forever?
   foul = e => {
     if (this.state.strike < 2) {
       e.preventDefault();
@@ -69,10 +70,10 @@ export default class dashboard extends Component {
   render() {
     return (
       <Fragment>
-        <button onClick={this.strike}> STRIKE </button>
-        <button onClick={this.ball}> BALL </button>
-        <button onClick={this.foul}>FOUL </button>
-        <button onClick={this.hit}> HIT </button>
+        <button onClick={this.strike}>STRIKE</button>
+        <button onClick={this.ball}>BALL</button>
+        <button onClick={this.foul}>FOUL</button>
+        <button onClick={this.hit}>HIT</button>
         <Display
           strike={this.state.strike}
           ball={this.state.ball}
