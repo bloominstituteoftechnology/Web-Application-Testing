@@ -5,10 +5,10 @@ class Display extends React.Component {
   constructor() {
     super();
     this.state = {
-      balls: "",
-      strikes: "",
-      fouls: "",
-      hits: ""
+      balls: 0,
+      strikes: 0,
+      fouls: 0,
+      hits: 0
     };
   }
 
@@ -17,7 +17,8 @@ class Display extends React.Component {
       this.setState({ ...this.state, balls: this.state.balls + 1 });
     } else {
       this.setState({
-        balls: 0
+        balls: 0,
+        strikes: 0
       });
     }
   };
