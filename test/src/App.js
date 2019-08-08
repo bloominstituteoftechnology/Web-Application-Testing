@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 
 class App extends Component {
-  state = {
+    state = {
     strike: 0,
     ball: 0,
     hits: 0,
@@ -49,7 +49,7 @@ this.setState({strike: 0});
       <div className="App">
         <h1> Baseball</h1>
 				<p>Strikes</p>
-				<p>Count: {this.state.strike}</p>
+				<p data-testid="testStrikes">Count: {this.state.strike}</p>
 				<button onClick={this.addStrike}>Strike</button>
 				<p>Balls</p>
 				<p>Count: {this.state.balls}</p>

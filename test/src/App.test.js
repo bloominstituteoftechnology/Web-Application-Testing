@@ -1,16 +1,16 @@
-import React, {render} from 'react';
-
+import React from 'react';
+import { render, fireEvent, cleanup } from '@testing-library/react';
 import App from './App';
 describe('<App />', () => {
 it('renders without crashing', () => {
   render(<App/>);
 });
 it('should display strikes and balls', () => {
-  const { getByText } = render(<App />);
+  const { expect } = render(<App />);
 
-   getByText(/strikes/i);
+   getByText(/strike/i);
 
-   getByText(/balls/i);
+   getByText(/ball/i);
 });
 
  it('should add strikes and balls', () => {
