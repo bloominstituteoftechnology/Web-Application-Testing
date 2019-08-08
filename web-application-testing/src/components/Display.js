@@ -7,6 +7,8 @@ export default function Display (props){
             <div>
                 {props.balls}
                 {props.strikes}
+                {props.fouls}
+                {props.hits}
             </div>
 
         </div>
