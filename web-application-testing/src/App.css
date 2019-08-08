@@ -1,0 +1,52 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App{
+ display: flex;
+ align-items: center;
+ flex-direction: column;
+}
+
+.dashboard{
+  padding: 5rem;
+}
+
+.display{
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+button {
+  background: rgb(0, 9, 128);
+  border-radius: 20%;
+  padding: 1rem;
+  color: rgb(22, 200, 231);
+  font-size: 20px;
+  border: none;
+  margin-top: 5%;
+  margin-left: 10px;
+}
+
+.score{
+  background: rgb(31, 15, 168);
+  border-radius: 5px;
+  padding: 1rem;
+  color: rgb(200, 255, 0);
+  font-size: 20px;
+  border: none;
+  margin-top: 5%;
+  margin-left: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.balls, .strikes, .fouls, .hits {
+  border: 2px solid orange;
+  padding: 5px 5px 5px 5px;
+  font-size: 30px;
+} 
