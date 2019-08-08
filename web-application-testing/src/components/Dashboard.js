@@ -39,9 +39,9 @@ export default function Dashboard () {
             <h1>Dashboard</h1>
             <button>Strike</button>
             <button>Ball</button>
-            <button onClick={() => strikesIncrement()}>Strike</button>
             <button onClick={() => ballsIncrement()}>Ball</button>
             <button onClick={() => foulsIncrement()}>Foul</button>
+            <button onClick={() => strikesIncrement()}>Strike</button>
             <button>hit</button>
             <Display balls={balls}
                      setBalls={setBalls}
