@@ -1,33 +1,52 @@
-.App {
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App{
+ display: flex;
+ align-items: center;
+ flex-direction: column;
+}
+
+.dashboard{
+  padding: 5rem;
+}
+
+.display{
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+button {
+  background: rgb(0, 9, 128);
+  border-radius: 20%;
+  padding: 1rem;
+  color: rgb(22, 200, 231);
+  font-size: 20px;
+  border: none;
+  margin-top: 5%;
+  margin-left: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.score{
+  background: rgb(31, 15, 168);
+  border-radius: 5px;
+  padding: 1rem;
+  color: rgb(200, 255, 0);
+  font-size: 20px;
+  border: none;
+  margin-top: 5%;
+  margin-left: 10px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.balls, .strikes, .fouls, .hits {
+  border: 2px solid orange;
+  padding: 5px 5px 5px 5px;
+  font-size: 30px;
+} 
