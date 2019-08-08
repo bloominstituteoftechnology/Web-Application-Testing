@@ -1,7 +1,5 @@
-//TODO: STEP 1 - Import the useState hook.
 import React, {useState} from "react";
 import "./App.css";
-// import BottomRow from "./BottomRow";
 
 function App() {
   const [balls, ballsCount] = useState(0);
@@ -9,33 +7,33 @@ function App() {
   const [hit, hitCount] = useState(0);
   const [foul, foulCount] = useState(0);
 
-  // setBallCount = () => {
-  //   if(this.state.balls === 3)
-  //     this.setState({balls: 0, strike: 0, hit: 0, foul: 0})
-  //   else
-  //     this.setState({ballCount:+1})
-  // }
+ const setBallCount = () => {
+    if(this.state.ballsCount === 3)
+      this.setState({ballsCount: 0, strikeCount: 0, hitCount: 0, foulCount: 0})
+    else
+      this.setState({ballCount:+1})
+  }
 
-  // setStrikeCount = () => {
-  //   if(this.state.strike === 3)
-  //     this.setState({balls: 0, strike: 0, hit: 0, foul: 0})
-  //   else
-  //     this.setState({strikeCount:+1})
-  // }
+  const setStrikeCount = () => {
+    if(this.state.strikeCount === 3)
+      this.setState({ballsCount: 0, strikeCount: 0, hitCount: 0, foulCount: 0})
+    else
+      this.setState({strikeCount:+1})
+  }
   
-  // setHitCount = () => {
-  //   if(this.state.hit === 3)
-  //     this.setState({balls: 0, strike: 0, hit: 0, foul: 0})
-  //   else
-  //     this.setState({hitCount:+1})
-  // }
+  const setHitCount = () => {
+    if(this.state.hitCount === 3)
+      this.setState({ballsCount: 0, strikeCount: 0, hitCount: 0, foulCount: 0})
+    else
+      this.setState({hitCount:+1})
+  }
 
-  // setFoulCount = () => {
-  //   if(this.state.balls === 3)
-  //     this.setState({balls: 0, strike: 0, hit: 0, foul: 0})
-  //   else
-  //     this.setState({foulCount:+1})
-  // }
+  const setFoulCount = () => {
+    if(this.state.foulCount === 3)
+      this.setState({ballsCount: 0, strikeCount: 0, hitCount: 0, foulCount: 0})
+    else
+      this.setState({foulCount:+1})
+  }
 
   return (
     <div className="container">
@@ -61,10 +59,10 @@ function App() {
       </section>
       <section className="buttons">
         <div className="homeButtons">
-          <button onClick={() => ballsCount(balls +1)}>Ball</button>
-          <button onClick={() => strikeCount(strike +1)}>Strike</button>
-          <button onClick={() => hitCount(hit +1)}>Foul</button>
-          <button onClick={() => foulCount(foul +1)}>Hit</button>
+          <button onClick={() => setBallCount()}>Ball</button>
+          <button onClick={() => setStrikeCount()}>Strike</button>
+          <button onClick={() => setHitCount()}>Foul</button>
+          <button onClick={() => setFoulCount()}>Hit</button>
         </div>
       </section>
     </div>
