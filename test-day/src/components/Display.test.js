@@ -7,17 +7,10 @@ describe("<Display />", () => {
   it("renders without crashing", () => {
     render(<Display />);
   });
-  it("should render pitch count", () => {
-    const playersData = [
-      { id: 1, name: "balls" },
-      { id: 2, name: "strike" },
-      { id: 3, name: "foul" }
-    ];
 
-    const comp = render(<Display players={playersData} />);
-
-    const players = comp.getAllByTestId("player");
-
-    expect(players).toHaveLength(playersData.length);
+  it("props work", () => {
+    const display = render(<Display strikes={1} balls={2} />);
+    display.getByText(/Strikes: 1/);
+    display.getByText(/Balls: 2/);
   });
 });

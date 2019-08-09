@@ -2,14 +2,10 @@ import React from "react";
 
 const Display = props => {
   return (
-    <>
-      {props.players.map(player => (
-        <div key={player.id} data-testid="player">
-          {player.name}
-        </div>
-      ))}
-    </>
+    <div>
+      <div>Strikes: {props.strikes}</div>
+      <div>Balls: {props.balls}</div>
+    </div>
   );
 };
-
 export default Display;

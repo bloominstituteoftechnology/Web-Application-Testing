@@ -1,32 +1,14 @@
-import React, { useState } from 'react'
-import Display from "./Display"
+import React, { useState } from "react";
 
-const Dashboard = () => {
-    const [balls, setBalls] = useState();
-    const [strikes, setStrikes] = useState();
-    const [fouls, setFouls] = useState();
+const Dashboard = props => {
+  return (
+    <div>
+      <button onClick={props.strike}>strike</button>
+      <button onClick={props.ball}>ball</button>
+      <button onClick={props.foul}>foul</button>
+      <button onClick={props.hit}>hit</button>
+    </div>
+  );
+};
 
-    ballCount() {
-
-    }
-
-    strikeCount() {
-
-    }
-
-    foulCount() {}
-
-    return (
-        <div>
-            <div className="button-board">
-                <button>balls</button>
-                <button>strike</button>
-                <button>foul</button>
-                <button>hit</button>
-            </div>
-            <Display />
-        </div>
-    )
-}
-
-export default Dashboard
+export default Dashboard;

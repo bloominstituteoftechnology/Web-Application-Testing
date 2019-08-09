@@ -15,9 +15,9 @@ describe("<App />", () => {
     render(<App />);
   });
 
-  it("renders Hello World", () => {
+  it("renders Baseball", () => {
     const app = render(<App />);
 
-    app.getAllByText(/hello world/i);
+    app.getAllByText(/BaseBall/i);
   });
 });
