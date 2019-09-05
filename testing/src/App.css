@@ -31,3 +31,45 @@
     transform: rotate(360deg);
   }
 }
+.scoreBoard {
+  /* display: flex;
+  justify-content: center; */
+  margin: auto;
+  background-color: gray;
+  border: 1px solid black;
+  width: 70%;
+  color: white;
+}
+.score {
+  display: flex;
+  justify-content: center;
+}
+
+.points {
+  width: 100px;
+  height: 100px;
+  background-color: #282c34;
+  color: white;
+  font-size: 80px;
+  padding: 0 25px;
+}
+.home {
+  padding: 20px;
+  border: 1px solid white;
+  border: 1px solid white;
+}
+
+.away {
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid white;
+}
+button {
+  margin: 15px;
+  padding: 10px;
+  width: 150px;
+  color: beige;
+  background-color: #282c34;
+  border-radius: 15px;
+  font-size: 25px;
+}
