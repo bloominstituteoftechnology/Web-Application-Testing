@@ -6,11 +6,11 @@ function Display({balls, strikes}) {
       <h1>Baseball Tracker</h1>
       <div>
         <h3>Balls</h3>
-        <h5>{balls}</h5>
+        <h2 data-testid="ballsvalue">{balls}</h2>
       </div>
       <div>
         <h3>Strikes</h3>
-        <h5>{strikes}</h5>
+        <h2 data-testid="strikesvalue">{strikes}</h2>
       </div>
     </section>
   )
