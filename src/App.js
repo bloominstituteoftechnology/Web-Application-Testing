@@ -9,21 +9,6 @@ function App() {
   const [ fouls, setFouls ] = useState(0);
   const [ hits, setHits ] = useState(0);
 
-  if ( balls === 4 || strikes === 3 ) {
-    setBalls(0);
-    setStrikes(0);
-  }
-
-  if ( hits === 1 ) {
-    setBalls(0);
-    setStrikes(0);
-    setFouls(0);
-  }
-
-  if ( strikes >= 2 ) {
-    setFouls(fouls);
-  }
-
   return (
     <div className="App">
       <Display 
