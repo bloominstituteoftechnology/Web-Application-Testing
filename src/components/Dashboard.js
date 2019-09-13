@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const addBall = balls => balls === 4 ? 0 : balls + 1;
-export const addStrike = strikes =>  strikes === 3 ? 0 : strikes + 1;
+export const addBall = balls => balls >= 3 ? 0 : balls + 1;
+export const addStrike = strikes =>  strikes >= 2 ? 0 : strikes + 1;
 export const addFoul = fouls => fouls + 1;
 export const addHit = hits => hits + 1;
 
