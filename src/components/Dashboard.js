@@ -18,9 +18,36 @@ export const addStrike = strikes => strikes + 1;
 export const addFoul = fouls => fouls + 1;
 export const addHit = hits => hits + 1;
 
-function Dashboard({ setBalls, setStrikes, setFouls, setHits }) {
+function Dashboard({ 
+    balls, 
+    strikes, 
+    fouls, 
+    hits, 
+    setBalls, 
+    setStrikes, 
+    setFouls, 
+    setHits 
+  }) {
+
   return (
     <div>
+      <button
+        onClick={()=> setBalls(addBall(balls))} 
+        data-testid="ballbtn"
+      >Ball
+      </button>
+      <button
+        onClick={()=> setStrikes(addStrike(strikes))}
+        data-testid="strikebtn"
+      >Strike</button>
+      <button 
+        onClick={()=> setFouls(addFoul(fouls))}
+        data-testid="foulbtn"
+      >Foul</button>
+      <button 
+        onClick={()=> setHits(addHit(hits))}
+        data-testid="hitbtn"
+      >Hit</button>
     </div>
   )
 }
