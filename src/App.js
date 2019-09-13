@@ -31,6 +31,10 @@ function App() {
         strikes={strikes}
       />
       <Dashboard 
+        balls={balls}
+        strikes={strikes}
+        fouls={fouls}
+        hits={hits}
         setBalls={setBalls}
         setStrikes={setStrikes}
         setFouls={setFouls}
