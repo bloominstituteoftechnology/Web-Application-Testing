@@ -18,22 +18,14 @@ function App() {
     <div className="App">
       <Display props={{
         balls,
-        setBalls,
         strikes,
-        setStrikes,
         fouls,
-        setFouls,
-        hits,
-        setHits
+        hits
       }} />
       <Dashboard props={{
-        balls,
         setBalls,
-        strikes,
         setStrikes,
-        fouls,
         setFouls,
-        hits,
         setHits
       }} />
     </div>
