@@ -24,21 +24,18 @@ function App() {
     setFouls(fouls);
   }
 
-
   return (
     <div className="App">
-      <Display props={{
-        balls,
-        strikes,
-        fouls,
-        hits
-      }} />
-      <Dashboard props={{
-        setBalls,
-        setStrikes,
-        setFouls,
-        setHits
-      }} />
+      <Display 
+        balls={balls} 
+        strikes={strikes}
+      />
+      <Dashboard 
+        setBalls={setBalls}
+        setStrikes={setStrikes}
+        setFouls={setFouls}
+        setHits={setHits}
+      />
     </div>
   );
 }

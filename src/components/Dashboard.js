@@ -18,7 +18,7 @@ export const addStrike = strikes => strikes + 1;
 export const addFoul = fouls => fouls + 1;
 export const addHit = hits => hits + 1;
 
-function Dashboard() {
+function Dashboard({ setBalls, setStrikes, setFouls, setHits }) {
   return (
     <div>
     </div>
