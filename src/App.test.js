@@ -1,8 +1,12 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
+import { addBall, addStrike, addFoul, addHit } from './components/Dashboard';
 
-it('renders without crashing', () => {
+test('renders without crashing', () => {
   // Arrange, Act, Assert
   render(<App />);
 });
+
+
+
