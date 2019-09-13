@@ -1,18 +1,5 @@
 import React from 'react';
 
-//export const addBall = (balls, strikes) => {
-//  if( balls === 4 || strikes === 3 ) {
-//    return 0;
-//  }
-//  return balls + 1
-//}
-
-//export const addStrike = (balls, strikes) => {
-//  if( balls === 4 || strikes === 3 ) {
-//  }
-//  return strikes + 1
-//}
-
 export const addBall = balls => balls === 3 ? 0 : balls + 1;
 export const addStrike = strikes =>  strikes === 2 ? 0 : strikes + 1;
 export const addFoul = fouls => fouls + 1;
