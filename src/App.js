@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Display from './Display';
+import Dashboard from './Dashboard';
+
 import './App.css';
 
 function App() {
+  const [strike, setStrike] = useState(0);
+  const [ball, setBall] = useState(0);
+  const [hit, setHit] = useState(0);
+  const [foul, setFoul] = useState(0);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Display 
+        strike={strike}
+        ball={ball}
+        hit={hit} 
+        foul={foul} />
+      <Dashboard 
+        strike={strike} setStrike={setStrike}
+        ball={ball} setBall={setBall}
+        hit={hit}  setHit={setHit}
+        foul={foul} setFoul={setFoul}
+        />
     </div>
   );
 }
