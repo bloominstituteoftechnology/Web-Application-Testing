@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 
 
-export const addStrikes = currentStrikes =>{
-    if (currentStrikes >=2) {
+export const addStrikes = currentStrike =>{
+    if (currentStrike >=2) {
         return 0;
     }
     else{
-        return currentStrikes + 1;
+        return currentStrike + 1;
     }
 };
 
@@ -19,17 +19,17 @@ export const addBallCount = currentBall =>{
     }
 };
 
-export const addFouls = currentFouls =>{
-    if(currentStrikes >= 2){
-        return currentStrikes;
+export const addFouls = currentStrike =>{
+    if(currentStrike >= 2){
+        return currentStrike;
     }
     else{
-        return currentStrikes + 1;
+        return currentStrike + 1;
     }
 };
 
 export const hits = currentValue =>{
-    return (currentValue = 0);
+    return currentValue = 0;
 };
 
 function Dashboard(){
@@ -43,7 +43,7 @@ function Dashboard(){
 
             <button
             className='ballcount-button'
-            onClick={()=>setBall(addBallCount(balls))}>Ball</button>
+            onClick={()=>setBall(addBallCount(ball))}>Ball</button>
 
             <button
             className='foul-button'
@@ -51,7 +51,7 @@ function Dashboard(){
 
             <button
             className='hit-button'
-            onClick={hits(strikes), setBall(hit(ball))}>Hit</button>
+            onClick={()=>setStrikes(hits(strikes), setBall(hits(ball)))}>Hit</button>
         </div>
     );
 }
