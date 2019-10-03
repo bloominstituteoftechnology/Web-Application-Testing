@@ -5,8 +5,8 @@ import Display from './components/display.js';
 function App() {
   return (
     <div className="App">
-      <Dashboard/>
       <Display/>
+      <Dashboard/>
     </div>
   );
 }
