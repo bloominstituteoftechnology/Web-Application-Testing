@@ -1,9 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render, getByTestId } from '@testing-library/react';
+
 import App from './App';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  render(<App />);
 });
+
+test('Player score is found', () => {
+  const { getByTestId } = render(<App />);
+
+  getByTestId('players__score');
+})
+
+
