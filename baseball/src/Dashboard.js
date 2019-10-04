@@ -42,8 +42,8 @@ export function Dashboard(){
     return(
         
         <div className="dashboard">
-            <div>Balls: {balls}</div>
-            <div>Strikes: {strikes}</div>
+            <div className="scoreboard">Balls: {balls}</div>
+            <div className="scoreboard">Strikes: {strikes}</div>
             <button onClick={() => setStrikes(addStrikes(strikes))}>Strike</button>
             <button onClick={() => setBalls(addBalls(balls))}>Ball</button>
             <button onClick={() => setStrikes(addFoul(strikes))}>Foul</button>

@@ -11,6 +11,7 @@ export function Display(){
         <div className="display">
             <h1>At Bat</h1>
             <Dashboard />
+            
 
         </div>
     )

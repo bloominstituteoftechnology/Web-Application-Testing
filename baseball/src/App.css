@@ -1,5 +1,59 @@
 .App {
   text-align: center;
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  
+}
+h1:hover{
+  letter-spacing: 6px;
+  word-spacing: 7px;
+  transition-duration: 520ms;
+}
+h2:hover{
+  font-size: 1.7rem;
+  letter-spacing: 4px;
+  word-spacing: 4px;
+  transition-duration: 400ms;
+}
+.scoreboard{
+  font-size: 2rem;
+  border: 1px solid black;
+  margin: 20px;
+  border-radius: 10px;
+  transition-duration: 400ms;
+}
+.scoreboard:hover{
+  background: black;
+  color: white;
+}
+p{
+  font-size: 1.5rem;
+}
+p:hover{
+  font-size: 1.5rem;
+  transition-duration: 500ms;
+  letter-spacing: 3px;
+  word-spacing: 3px;
+
+
+}
+button{
+  border: 1px solid black;
+  font-size: 1.5rem;
+  border-radius: 2rem;
+  margin: 20px;
+  height: 3rem;
+  width: 10rem;
+  transition-duration: 400ms;
+
+}
+button:hover{
+  background: black;
+  color: white;
 }
 
 .App-logo {

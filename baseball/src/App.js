@@ -4,6 +4,11 @@ import './App.css';
 
 import { Display } from "./Display";
 
+import { Example } from "./Example";
+
+import { Example2 } from "./Example";
+
+import { Example3 } from "./Example";
 
 
 function App() {
@@ -11,6 +16,11 @@ function App() {
   return (
     <div className="App">
       <Display />
+      
+      <Example />
+      <Example2 />
+    
+      <Example3 />
       
     </div>
   );
