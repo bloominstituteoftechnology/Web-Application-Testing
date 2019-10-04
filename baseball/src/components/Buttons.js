@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 export default function Buttons(props) {
    const {balls, strikes, setBalls, setStrikes} = props;
 
@@ -29,10 +30,6 @@ export default function Buttons(props) {
       if (strikes == 0 || strikes == 1) { 
          setStrikes(strikes+1);
       }
-      // else
-      // {
-      //    setStrikes(strikes+1);
-      // }
    }
 
    const addHit = () => {

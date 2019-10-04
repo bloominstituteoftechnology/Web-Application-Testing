@@ -11,9 +11,9 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header data-testid="main-header" className="App-header">
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Web-Application-Testing
         </p>
 
         <Display balls={balls} strikes={strikes}/>
