@@ -16,8 +16,9 @@ p{
    width: 200px;
    height: 200px;
    border: 2px solid red;
-   margin: 100px; 
+   margin: 20px 50px; 
    display: flex;
    justify-content: center;
    align-items: center;
+   font-size: 50px;
 }
