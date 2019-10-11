@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './Button';
+// import Button from './Button';
 
 export function Dashboard() {
     return (
@@ -7,7 +7,7 @@ export function Dashboard() {
             <ChangeButton
             name='Strike'
             value={props.strikes}
-            strike={propls.strikes}
+            strike={props.strikes}
             />
         </div>
     )
@@ -23,4 +23,4 @@ export function Dashboard() {
     //     );
     // }
 
-    // export default Dashboard
+export default Dashboard

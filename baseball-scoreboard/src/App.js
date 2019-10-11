@@ -22,7 +22,7 @@ function App() {
   // return (
   //   <div className="App">
   //     <Display
-  //     ballcount={balls}
+  //     ballCount={balls}
   //     strikeCount={strikes}
   //     />
   //     <Dashboard 
