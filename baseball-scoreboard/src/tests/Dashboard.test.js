@@ -12,7 +12,7 @@ test('Dashboard is rendered', () => {
 })
 
 test('Strikes button exists', () => {
-    const stirkeDash = rtl.render(<Dashboard />);
+    const strikeDash = rtl.render(<Dashboard />);
     expect (dashboard).toBeDefined(null);
 
 
