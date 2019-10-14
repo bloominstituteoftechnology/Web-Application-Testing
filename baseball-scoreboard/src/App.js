@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import Display from './Display';
-import Dashboard from './Dashboard'; 
+import React from 'react';
+import Display from './components/Display';
+import Dashboard from './components/Dashboard'; 
+import { useBaseball }from './utils/useBaseball'
 import './App.css';
 
 function App() {
-  const { stats, ...buttons } =useBaseball();
+  const { stats, ...buttons } = useBaseball();
 
   return(
     <>
