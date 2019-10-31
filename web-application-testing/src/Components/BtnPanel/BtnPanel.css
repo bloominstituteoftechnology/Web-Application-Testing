@@ -1,0 +1,11 @@
+
+.btnContainer button{
+    margin: 2rem 1rem 1rem 0rem;  
+    width: 4.5rem;
+    height: 2rem;
+    border-radius: 25px;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+
+}
