@@ -16,8 +16,9 @@ console.log(props);
         <>
    
         <button onClick ={props.strikeCheck}>strike</button>
-      <button onClick = {props.hit}>Hit</button>
-
+        <button onClick = {props.hit}>Hit</button>
+        <button onClick = {props.foul}>foul</button>
+        <button onClick = {props.ballCheck}>Ball</button>
         </>
     )
 }
