@@ -66,10 +66,10 @@ render() {
         <div>
         <h3>The Count Is</h3>
     
-        <p>Balls: {this.state.balls}</p>
-        <p>Strikes: {this.state.strikes}</p>
-        <p>Fouls: {this.state.fouls}</p>
-        <p>Hits: {this.state.hits}</p>
+        <p data-testid="p-tags">Balls: {this.state.balls}</p>
+        <p data-testid="p-tags"> Strikes: {this.state.strikes}</p>
+        <p data-testid="p-tags">Fouls: {this.state.fouls}</p>
+        <p data-testid="p-tags">Hits: {this.state.hits}</p>
       
             
    
