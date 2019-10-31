@@ -1,0 +1,21 @@
+.display{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: 0 auto;
+    
+}
+
+.display div {
+    margin-top: 1rem;
+    margin-right: 1rem;
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    font-size: 36px;
+}
+
