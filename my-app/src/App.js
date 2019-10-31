@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Display from './Components/Display'
+//test
+export const sum = (a,b) => a + b;
 
 function App() {
   return (

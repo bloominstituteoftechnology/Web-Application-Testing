@@ -7,7 +7,7 @@ const [strike ,setStrike] = useState(0);
 const [ball, setBall] = useState(0)
 
 
-const strikeCheck = () => {
+ const strikeCheck = () => {
     if (strike > 2 ) {
         setStrike (0);
         setBall (0);
@@ -15,6 +15,11 @@ const strikeCheck = () => {
         setStrike(strike+1)
     }
 }
+
+
+  
+
+
 const ballCheck = () => {
     if (ball > 3 ) {
         setStrike (0);
