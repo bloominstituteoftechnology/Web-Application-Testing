@@ -1,0 +1,78 @@
+body {
+  background: #f7f7f7;
+}
+
+.scoreboard {
+  background: white;
+  color: #4c4c4c;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
+  margin: 1rem;
+  font-family: sans-serif;
+  width: 570px;
+  max-width: 100%;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.scoreboard h2 {
+  background: rebeccapurple;
+  color: white;
+  margin: 0;
+  padding: 0.4rem 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+}
+
+.scoreboard-content {
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scoreboard span {
+  font-size: 2.75rem;
+  font-weight: 900;
+  margin: 0;
+  font-family: monospace;
+}
+
+.scoreboard button {
+  border: none;
+  padding: 0.5rem 1rem;
+  background: #ebdcfb;
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin: 0.2rem;
+  cursor: pointer;
+  outline: none;
+  border-radius: 3px;
+}
+
+.scoreboard button:hover {
+  background: #d9c2f1;
+}
+
+.scoreboard button:focus,
+.scoreboard button:active {
+  box-shadow: 0 0 0 2px rgba(102, 51, 153, 0.45);
+}
+
+.scoreboard-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scoreboard-block h3 {
+  margin: 0;
+  font-family: monospace;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.scoreboard-timer {
+  padding: 0 1rem;
+}
