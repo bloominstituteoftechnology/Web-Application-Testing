@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Display = () => {
+const Display = ({strike, ball}) => {
 
     return (
         <div>
-            <h4>Strike count will go here</h4>
-            <h4>Ball count will go here</h4>
+            <h4>Strike: {strike}</h4>
+            <h4>Ball: {ball}</h4>
         </div>
     )
 }
