@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 
 import './App.css';
 import Dashboard from './Components/Dashboard';
+import ScoreDisplay from './Components/Display';
 
 function App() {
   const [balls, setBalls] = useState(0);
@@ -41,6 +42,7 @@ function App() {
 
   return (
     <div className="App">
+      <ScoreDisplay strikes={strikes} balls={balls}/>
       <Dashboard ball={ball} strike={strike} hit={hit} foul={foul} />
     </div>
   );
