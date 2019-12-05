@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+.button {
+  border-radius: 10px;
+  color: black;
+  background: lightslategray;
+  border: 2px solid black;
+  margin: 1%;
+  width: 5%;
+  height: 3%;
+  font-display: bold;
+}
+
