@@ -31,6 +31,7 @@ function App() {
       setStrikes(strikes + 1)
     } else {
       setStrikes(0)
+      setBalls(0)
     }
   }
 
