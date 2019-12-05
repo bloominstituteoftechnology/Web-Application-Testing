@@ -1,25 +1,12 @@
 import React, {useState} from 'react';
 import Display from './Display';
+import {strikeCount} from '../utils/strike/strikeCount';
+import {ballCount} from '../utils/balls/ballCount';
+import {reset} from '../utils/fouls/reset';
 
 const Dashboard = () => {
     const [strike, setStrikes] = useState(0);
     const [ball, setBalls] = useState(0);
-
-    const strikeCount = () => {
-        if(strike < 3) {
-            return strike + 1;
-        } else {
-            return strike - strike
-        }
-    }
-
-    const ballCount = () => {
-        if(ball < 4) {
-            return ball + 1
-        } else {
-            return ball - ball
-        }
-    }
 
     const foulCount = () => {
         if(strike < 2) {
@@ -27,9 +14,6 @@ const Dashboard = () => {
         }
     }
 
-    const reset = (count) => {
-        return (count = 0)
-    }
     return( 
         <div>
             <Display strike= {strike} ball = {ball}/> 
