@@ -13,11 +13,31 @@ const Dashboard = () => {
         }
     }
 
+    const ballCount = () => {
+        if(ball < 4) {
+            return ball + 1
+        } else {
+            return ball - ball
+        }
+    }
+
+    const foulCount = () => {
+        if(strike < 2) {
+            setStrikes(foul => ++foul)
+        }
+    }
+
+    const reset = (count) => {
+        return (count = 0)
+    }
     return( 
         <div>
             <Display strike= {strike} ball = {ball}/> 
             <h2>Here's the buttons</h2>
-            <button onClick = {() => (setStrikes(strikeCount(strike)))}>Strike</button>
+            <button onClick = {() => {setStrikes(strikeCount(strike))}}>Strike</button>
+            <button onClick = {() => {setBalls(ballCount(ball))}} >Ball</button>
+            <button onClick = {foulCount}>Foul</button>
+            <button onClick = {() => (setStrikes(reset(strike)), setBalls(reset(ball)))}>Reset</button>
         </div>
 
     )
