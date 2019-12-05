@@ -1,8 +1,17 @@
 import React, {useState} from 'react';
-
 import './App.css';
 import Dashboard from './Components/Dashboard';
 import ScoreDisplay from './Components/Display';
+import styled from 'styled-components'
+
+const Board = styled.div`
+width: 50%;
+height: 25%;
+background: #99b19c;
+border: 5px solid black;
+border-radius: 10px;
+margin: auto;
+`
 
 function App() {
   const [balls, setBalls] = useState(0);
@@ -27,7 +36,7 @@ function App() {
   }
 
   const foul = () => {
-    if (strike > 3) {
+    if (strikes !== 2) {
       setStrikes(strikes + 1)
     } else {
       setStrikes(0)
@@ -43,8 +52,10 @@ function App() {
 
   return (
     <div className="App">
-      <ScoreDisplay strikes={strikes} balls={balls}/>
-      <Dashboard ball={ball} strike={strike} hit={hit} foul={foul} />
+      <Board>
+        <ScoreDisplay strikes={strikes} balls={balls}/>
+        <Dashboard ball={ball} strike={strike} hit={hit} foul={foul} />
+      </Board>
     </div>
   );
 }
