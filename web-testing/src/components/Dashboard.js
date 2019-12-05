@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useCounter } from "../hooks";
 import styled from "styled-components";
 
 const CompCount = styled.div`
@@ -24,8 +23,6 @@ const Bracket = styled.div`
 export default function Counter({ hits }) {
   const [balls, changeBalls] = useState(0);
   const [strikes, changeStrike] = useState(0);
-  const [hitsCount2, foul] = useCounter(0, 1);
-  const [hitsCount3, hit] = useCounter(0, 1);
 
   const ballsCount = () => {
     if (balls === 4) {
@@ -53,19 +50,11 @@ export default function Counter({ hits }) {
       <Bracket>
         Strike: <span id="count">{strikes}</span>
       </Bracket>
-      <Bracket>
-        Foul: <span id="count">{hitsCount2}</span>
-      </Bracket>
-      <Bracket>
-        Hit: <span id="count">{hitsCount3}</span>
-      </Bracket>
 
       <button onClick={e => ballsCount()}>Balls</button>
       <button onClick={e => strikeCount()}>Strike</button>
-      <button onClick={foul}>Foul</button>
-      <button onClick={hit} id="reset">
-        Hit
-      </button>
+      <button>Foul</button>
+      <button id="reset">Hit</button>
     </CompCount>
   );
 }
