@@ -76,4 +76,4 @@ This section is **optional** and not counted towards MVP. Start working on it af
 - Expand the solution to keep track of the number of runs and errors in the inning.
 - Expand the solution to keep track of which bases are occupied and to record hits, doubles, triples and home runs.
 - Expand the solution to keep track of all activity across all innings. Display the current inning.
-- Work on [this repository for extra practice testing a legacy React application](https://github.com/LambdaSchool/React-Testing).
+- Work on [this repository for extra practice testing a legacy React application](https://github.com/LambdaSchool/React-Testing). 
