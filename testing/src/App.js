@@ -1,11 +1,11 @@
 import React from 'react';
-import Display from './component/Display'
+import Dashboard from './component/DashBoard'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-     <Display/>
+     <Dashboard/>
     </div>
   );
 }

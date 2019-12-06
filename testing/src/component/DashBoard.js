@@ -42,7 +42,7 @@ class Dashboard extends React.Component {
     render() {
         return (
             <div>
-                <h1>hello</h1>
+                
                
                 <Display
                 strike={this.state.strike}
