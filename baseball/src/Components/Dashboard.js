@@ -23,10 +23,10 @@ const Dashboard = () => {
                 <h2>Count the At Bat</h2>
             </div>
             <div className = 'btn-container'>
-                <button className = 'btn' onClick = {() => {setStrikes(strikeCount(strike))}}>Strike</button>
-                <button className = 'btn' onClick = {() => {setBalls(ballCount(ball))}} >Ball</button>
-                <button className = 'btn' onClick = {foulCount}>Foul</button>
-                <button className = 'btn' onClick = {() => (setStrikes(reset(strike)), setBalls(reset(ball)))}>Reset</button>
+                <button title='counter-influencer' className = 'btn' onClick = {() => {setStrikes(strikeCount(strike))}}>Strike</button>
+                <button title='counter-influencer' className = 'btn' onClick = {() => {setBalls(ballCount(ball))}} >Ball</button>
+                <button title='counter-influencer' className = 'btn' onClick = {foulCount}>Foul</button>
+                <button title='counter-influencer' className = 'btn' onClick = {() => (setStrikes(reset(strike)), setBalls(reset(ball)))}>Reset</button>
             </div>
         </div>
 

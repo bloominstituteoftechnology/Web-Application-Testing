@@ -19,3 +19,4 @@ test('ball title rendered', () => {
 
   getByText(/^ball$/i)
 })
+
