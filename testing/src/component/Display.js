@@ -2,14 +2,7 @@ import React from 'react';
 
 
 class Display extends React.Component {
-        constructor(props){
-            super(props)
-            this.state = {
-                strike: 0,
-                ball: 0
-            }
-        }
-
+       
     render() {
         return (
             <div >
