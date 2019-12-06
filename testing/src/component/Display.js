@@ -4,9 +4,10 @@ import React from 'react';
 class Display extends React.Component {
        
     render() {
+        console.log(this)
         return (
-            <div >
-                <Display />
+            <div>
+               
                 <h1>{this.props.strike} Strike</h1>
 
                 <h1>{this.props.ball} Ball</h1>

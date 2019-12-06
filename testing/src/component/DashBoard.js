@@ -1,5 +1,5 @@
 import React from 'react';
-import Display from './Display';
+import Display from './Display'
 
 // balls and strikes reset to 0 when a player reaches 3 strikes or 4 balls. X
 
@@ -42,9 +42,9 @@ class Dashboard extends React.Component {
     render() {
         return (
             <div>
-
+                <h1>hello</h1>
                
-                <Display 
+                <Display
                 strike={this.state.strike}
                 ball={this.state.ball}
                 foulHandler={this.foulHandler}
@@ -53,9 +53,7 @@ class Dashboard extends React.Component {
                 resetBall={this.resetBall}
                 hitHandler={this.hitHandler}
                 strikeHandler={this.strikeHandler}
-                resetStrike={this.resetStrike}
-                
-                />
+                resetStrike={this.resetStrike}/>
 
             </div>
         )
