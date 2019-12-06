@@ -36,3 +36,76 @@
     transform: rotate(360deg);
   }
 }
+
+.whole-thing {
+  display: flex;
+  flex-direction: column;
+  background: lightcoral;
+  margin: 10%;
+  height: 55vh;
+  padding: 2%;
+}
+
+
+.btn-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 20%;
+  
+}
+
+button {
+  border: none;
+  text-decoration: none;
+  font-size: 2rem;
+  text-align: center;
+  width: 200px;
+  height: 70px;
+  background: #0086AD;
+  cursor: pointer;
+
+}
+
+.btn:hover{
+  background: #97EBDB;
+}
+
+.display-container { 
+  display: flex;
+  justify-content: space-evenly;
+  background: purple;
+  height: 200px;
+  width: 100%;
+  
+ /* margin: 5% 10%;  */
+}
+
+.display-container .type {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 100%;
+  background: darkgrey;
+ 
+}
+
+
+
+.type .title {
+  background: pink;
+
+}
+
+.type .title h4 {
+  font-size: 1rem;
+}
+
+.type .numbers {
+  background: black;
+
+}
+.type .numbers h4 {
+  font-size: 2.15rem;
+  color: white;
+}
