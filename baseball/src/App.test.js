@@ -15,8 +15,14 @@ test('App renders without crashing', () => {
 })
 
 test('ball title rendered', () => {
-  const {getByText} = render(<App />);
+  const {getAllByText} = render(<App />);
 
-  getByText(/^ball$/i)
+  const getBalls = getAllByText(/ball/i)
+  expect(getBalls).toHaveLength(2);
 })
 
+test('at is rendered only once', () => {
+  const {getByText} = render(<App />);
+  const getAtMe = getByText(/random/i)
+  expect(getAtMe).toBeInTheDocument();
+})

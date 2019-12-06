@@ -7,7 +7,7 @@ import Dashboard from './Components/Dashboard';
 function App() {
   return (
     <div className="App">
-      <h1>At Bat Counter</h1>
+      <h1>At Bat Random Counter</h1>
       <Dashboard />
     </div>
   );
