@@ -78,4 +78,60 @@
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
+
+.App .record-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.App #game-record-header {
+  text-align: center;
+}
+
+.App .base-tracker-wrapper {
+  margin: auto;
+  border: 2px solid black;
+}
+
+.App .base-tracker-wrapper h2 {
+  text-align: center;
+}
+
+.App .base-tracker-wrapper .bases {
+  width: 40%;
+  margin: auto;
+  border: 1px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.App .base-tracker-wrapper .bases span {
+  border: 2px solid black;
+  border-radius: 40%;
+}
+
+.App .base-tracker-wrapper .bases .bases-row1 {
+  text-align: center;
+}
+
+.App .base-tracker-wrapper .bases .bases-row2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.App .base-tracker-wrapper .bases .bases-row3 {
+  text-align: center;
+}
 /*# sourceMappingURL=App.css.map */

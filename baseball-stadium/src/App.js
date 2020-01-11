@@ -3,6 +3,8 @@ import "./App.css";
 import { Display } from "./components/Display";
 import { Dashboard } from "./components/Dashboard";
 import { Roster } from "./components/Roster";
+import { Record } from "./components/GameRecord";
+import { BaseTracker } from "./components/BaseTracker";
 //todo check better comments ext for adding /*! and so forth
 class App extends Component {
   constructor() {
@@ -170,8 +172,10 @@ class App extends Component {
           foul={this.foulHandler}
           hit={this.hitHandler}
           reset={this.resetHandler}
-          />
-          <Roster teams={this.state.teams}/>
+        />
+        <Roster teams={this.state.teams} />
+        <Record teams={this.state.teams} />
+        <BaseTracker bases={this.state.bases} />
       </div>
     );
   }
