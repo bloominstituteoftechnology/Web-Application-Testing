@@ -56,13 +56,13 @@ class App extends Component {
 
   componentDidMount() {
     console.log("mounted");
-    this.setState = {
+    this.setState({
       inning: 1,
       batting: {
         team: Object.keys(this.state.teams)[0],
         player: this.state.teams.home.players[0]
       }
-    };
+    });
   }
 
   componentDidUpdate() {
@@ -128,8 +128,14 @@ class App extends Component {
       error: 0,
       out: 0,
       batting: {
-        team: "",
-        player: ""
+        team: Object.keys(this.state.teams)[0],
+        player: this.state.teams.home.players[0]
+      },
+      bases: {
+        base1: "",
+        base2: "",
+        base3: "",
+        base4: ""
       },
       teams: {
         home: {
@@ -138,7 +144,7 @@ class App extends Component {
             hStrikes: 0,
             hBalls: 0,
             hFouls: 0,
-            hHits: 0,
+            hHits: [],
             hRuns: 0,
             hErrors: 0
           }
@@ -149,7 +155,7 @@ class App extends Component {
             vStrikes: 0,
             vBalls: 0,
             vFouls: 0,
-            vHits: 0,
+            vHits: [],
             vRuns: 0,
             vErrors: 0
           }
@@ -164,6 +170,7 @@ class App extends Component {
     return (
       //todo add routes to team record and Roster components
       <div className="App">
+        <h1>Baseball Testing</h1>
         <Display state={this.state} />
 
         <Dashboard

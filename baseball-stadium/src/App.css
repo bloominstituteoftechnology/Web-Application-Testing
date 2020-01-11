@@ -3,6 +3,10 @@
   margin: auto;
 }
 
+.App h1 {
+  text-align: center;
+}
+
 .App .display-wrapper {
   border: 3px solid green;
   margin: 15px auto;

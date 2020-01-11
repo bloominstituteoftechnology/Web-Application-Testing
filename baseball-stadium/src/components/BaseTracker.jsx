@@ -1,7 +1,7 @@
 import React from "react";
 
 export const BaseTracker = props => {
-  const { base1, base2, base3, base4 } = props;
+  const { base1, base2, base3, base4 } = props.bases;
   return (
     <>
       <div className="base-tracker-wrapper">
