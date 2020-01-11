@@ -1,38 +1,73 @@
 .App {
+  width: 80%;
+  margin: auto;
+}
+
+.App .display-wrapper {
+  border: 3px solid green;
+  margin: 15px auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App .display-wrapper .display-row1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
-.App-link {
-  color: #61dafb;
+.App .display-wrapper .display-row1 .display {
+  border: 2px solid red;
+  width: 30%;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App .display-wrapper .display-row2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
+
+.App .display-wrapper .display-row2 .display {
+  border: 2px solid red;
+  width: 30%;
+  text-align: center;
+}
+
+.App .dashboard-wrapper {
+  border: 3px solid blue;
+}
+
+.App .dashboard-wrapper .dashboard-row1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.App .dashboard-wrapper .dashboard-row1 button {
+  font-size: 2rem;
+  border: 3px solid skyblue;
+  border-radius: 40%;
+}
+
+.App .dashboard-wrapper .dashboard-row2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.App .dashboard-wrapper .dashboard-row2 button {
+  font-size: 2rem;
+  border: 3px solid skyblue;
+  border-radius: 40%;
+}
+/*# sourceMappingURL=App.css.map */

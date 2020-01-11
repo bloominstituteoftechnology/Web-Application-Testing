@@ -1,84 +1,170 @@
 import React, { Component } from "react";
+import "./App.css";
 import { Display } from "./components/Display";
 import { Dashboard } from "./components/Dashboard";
-
+import { Roster } from "./components/Roster";
+//todo check better comments ext for adding /*! and so forth
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      strikes: 0,
-      balls: 0,
-      fouls: 0,
-      hits: 0
+      strike: 0,
+      ball: 0,
+      foul: 0,
+      hit: 0,
+      inning: 0,
+      error: 0,
+      out: 0,
+      batting: {
+        team: "",
+        player: ""
+      },
+      bases: {
+        base1: "",
+        base2: "",
+        base3: "",
+        base4: ""
+      },
+      teams: {
+        home: {
+          players: ["Braden", "Wes", "Steven", "Ark"],
+          record: {
+            hStrikes: 0,
+            hBalls: 0,
+            hFouls: 0,
+            hHits: [],
+            hRuns: 0,
+            hErrors: 0
+          }
+        },
+        visitor: {
+          players: ["AR", "Jeffery", "Jessica", "Jose"],
+          record: {
+            vStrikes: 0,
+            vBalls: 0,
+            vFouls: 0,
+            vHits: [],
+            vRuns: 0,
+            vErrors: 0
+          }
+        }
+      }
+    };
+  }
+
+  componentDidMount() {
+    console.log("mounted");
+    this.setState = {
+      inning: 1,
+      batting: {
+        team: Object.keys(this.state.teams)[0],
+        player: this.state.teams.home.players[0]
+      }
     };
   }
 
   componentDidUpdate() {
     // console.log("Component Updated");
-    console.log("state", this.state);
-    if (this.state.strikes === 3 || this.state.balls === 4) {
+    console.log("update", this.state);
+    if (this.state.strike === 3 || this.state.ball === 4) {
       this.setState({
-        balls: 0,
-        strikes: 0
+        ball: 0,
+        strike: 0
       });
     }
   }
 
-  strikeHandler = evt => {
+  strikeHandler = () => {
     console.log("strike");
     this.setState({
-      strikes: this.state.strikes + 1
+      strike: this.state.strike + 1
     });
   };
 
-  ballHandler = evt => {
+  ballHandler = () => {
     console.log("ball");
     this.setState({
-      balls: this.state.balls + 1
+      ball: this.state.ball + 1
     });
   };
 
-  foulHandler = evt => {
+  foulHandler = () => {
     console.log("foul");
-    if (this.state.strikes === 0) {
+    if (this.state.strike === 0) {
       this.setState({
-        strikes: 1,
-        fouls: this.state.fouls + 1
+        strike: 1,
+        foul: this.state.foul + 1
       });
-    } else if (this.state.strikes === 1) {
+    } else if (this.state.strike === 1) {
       this.setState({
-        strikes: 2,
-        fouls: this.state.fouls + 1
+        strike: 2,
+        foul: this.state.foul + 1
       });
     } else {
       this.setState({
-        fouls: this.state.fouls + 1
+        foul: this.state.foul + 1
       });
     }
   };
 
-  hitHandler = evt => {
+  hitHandler = () => {
     console.log("hit");
     this.setState({
-      strikes: 0,
-      balls: 0,
-      hits: this.state.hits + 1
+      strike: 0,
+      ball: 0,
+      hit: this.state.hit + 1
     });
   };
 
-  resetHandler = evt => {
+  resetHandler = () => {
     this.setState({
-      strikes: 0,
-      balls: 0,
-      fouls: 0,
-      hits: 0
+      strike: 0,
+      ball: 0,
+      foul: 0,
+      hit: 0,
+      inning: 1,
+      error: 0,
+      out: 0,
+      batting: {
+        team: "",
+        player: ""
+      },
+      teams: {
+        home: {
+          players: ["Braden", "Wes", "Steven", "Ark"],
+          record: {
+            hStrikes: 0,
+            hBalls: 0,
+            hFouls: 0,
+            hHits: 0,
+            hRuns: 0,
+            hErrors: 0
+          }
+        },
+        visitor: {
+          players: ["AR", "Jeffery", "Jessica", "Jose"],
+          record: {
+            vStrikes: 0,
+            vBalls: 0,
+            vFouls: 0,
+            vHits: 0,
+            vRuns: 0,
+            vErrors: 0
+          }
+        }
+      }
     });
   };
 
   render() {
+    console.log("state", this.state);
+    console.log("reset", this.resetHandler);
     return (
+      //todo add routes to team record and Roster components
       <div className="App">
         <Display state={this.state} />
+        {/* <Roster /> */}
+
         <Dashboard
           strike={this.strikeHandler}
           ball={this.ballHandler}

@@ -1,0 +1,38 @@
+@mixin display
+    border: 2px solid red
+    width: 30%
+    text-align: center
+@mixin row
+    display: flex
+    justify-content: space-around
+
+@mixin dashboardRow
+    display: flex
+    justify-content: space-evenly
+    button
+        font-size: 2rem
+        border: 3px solid skyblue
+        border-radius: 40%
+        
+//? why cant I add comments between the classes???
+.App
+    width: 80%
+    margin: auto
+    .display-wrapper
+        border: 3px solid green
+        margin: 15px auto
+        text-align: center
+        .display-row1
+            @include row
+            .display
+                @include display
+        .display-row2
+            @include row
+            .display
+                @include display
+    .dashboard-wrapper
+        border: 3px solid blue
+        .dashboard-row1
+            @include dashboardRow
+        .dashboard-row2
+            @include dashboardRow
