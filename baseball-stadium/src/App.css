@@ -70,4 +70,12 @@
   border: 3px solid skyblue;
   border-radius: 40%;
 }
+
+.App .roster-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
 /*# sourceMappingURL=App.css.map */

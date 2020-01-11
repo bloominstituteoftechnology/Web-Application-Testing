@@ -163,7 +163,6 @@ class App extends Component {
       //todo add routes to team record and Roster components
       <div className="App">
         <Display state={this.state} />
-        {/* <Roster /> */}
 
         <Dashboard
           strike={this.strikeHandler}
@@ -171,7 +170,8 @@ class App extends Component {
           foul={this.foulHandler}
           hit={this.hitHandler}
           reset={this.resetHandler}
-        />
+          />
+          <Roster teams={this.state.teams}/>
       </div>
     );
   }
