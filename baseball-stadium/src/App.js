@@ -165,8 +165,8 @@ class App extends Component {
   };
 
   render() {
-    console.log("state", this.state);
-    console.log("reset", this.resetHandler);
+    // console.log("state", this.state);
+    // console.log("reset", this.resetHandler);
     return (
       //todo add routes to team record and Roster components
       <div className="App">

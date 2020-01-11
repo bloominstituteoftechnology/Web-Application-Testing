@@ -5,7 +5,11 @@ export const Dashboard = ({ strike, ball, foul, hit, reset }) => {
     <div className="dashboard-wrapper">
       {/* Row 1 */}
       <div className="dashboard-row1">
-        <button onClick={strike} className="dashboard-btn-strike">
+        <button
+          onClick={strike}
+          className="dashboard-btn-strike"
+          data-testid="strikeBtn"
+        >
           Strike
         </button>
         <button onClick={ball} className="dashboard-btn-ball">
