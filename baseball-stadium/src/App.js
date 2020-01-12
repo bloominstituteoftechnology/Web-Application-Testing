@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import "./styles/App.css";
 import { Display } from "./components/Display";
 import { Dashboard } from "./components/Dashboard";
 import { Roster } from "./components/Roster";
@@ -55,7 +55,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log("mounted");
+    // console.log("mounted");
     this.setState({
       inning: 1,
       batting: {
@@ -67,7 +67,7 @@ class App extends Component {
 
   componentDidUpdate() {
     // console.log("Component Updated");
-    console.log("update", this.state);
+    // console.log("update", this.state);
     if (this.state.strike === 3 || this.state.ball === 4) {
       this.setState({
         ball: 0,
