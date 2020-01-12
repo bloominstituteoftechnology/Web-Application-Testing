@@ -9,41 +9,34 @@ export const Record = ({ teams }) => {
       <div className="record-wrapper">
         <div className="record-home">
           <h3>Home Team</h3>
-          <p>Strikes: {homeTeamRecord.hStrikes}</p>
-          <p>Balls: {homeTeamRecord.hBalls}</p>
-          <p>Fouls: {homeTeamRecord.hFouls}</p>
+          <p>Strikes: {homeTeamRecord.strikes.total}</p>
+          <p>Balls: {homeTeamRecord.balls.total}</p>
+          <p>Fouls: {homeTeamRecord.fouls.total}</p>
           <p>
-            Hits: {homeTeamRecord.hHits}
-            {homeTeamRecord.hHits.map(e => (
+            Hits: {homeTeamRecord.hits.total}
+            {homeTeamRecord.hits.inning.map(e => (
               <span>{e}</span>
             ))}
           </p>
-          <p>Runs: {homeTeamRecord.hRuns}</p>
-          <p>Errors: {homeTeamRecord.hErrors}</p>
+          <p>Runs: {homeTeamRecord.runs.total}</p>
+          <p>Errors: {homeTeamRecord.errors.total}</p>
         </div>
 
         <div className="record-away">
           <h3>Away Team</h3>
-          <p>Strikes: {visitorTeamRecord.vStrikes}</p>
-          <p>Balls: {visitorTeamRecord.vBalls}</p>
-          <p>Fouls: {visitorTeamRecord.vFouls}</p>
+          <p>Strikes: {visitorTeamRecord.strikes.total}</p>
+          <p>Balls: {visitorTeamRecord.balls.total}</p>
+          <p>Fouls: {visitorTeamRecord.fouls.total}</p>
           <p>
-            Hits: {visitorTeamRecord.vHits}
-            {visitorTeamRecord.vHits.map(e => (
+            Hits: {visitorTeamRecord.hits.total}
+            {visitorTeamRecord.hits.inning.map(e => (
               <span>{e}</span>
             ))}
           </p>
-          <p>Runs: {visitorTeamRecord.vRuns}</p>
-          <p>Errors: {visitorTeamRecord.vErrors}</p>
+          <p>Runs: {visitorTeamRecord.runs.total}</p>
+          <p>Errors: {visitorTeamRecord.errors.total}</p>
         </div>
       </div>
     </>
   );
 };
-
-// hStrikes: 0,
-// : 0,
-// : 0,
-// : [],
-// : 0,
-// : 0

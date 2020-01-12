@@ -32,28 +32,77 @@ class App extends Component {
         base3: "",
         base4: ""
       },
+
       teams: {
         home: {
           players: ["Braden", "Wes", "Steven", "Ark"],
           record: {
-            hStrikes: 0,
-            hBalls: 0,
-            hFouls: 0,
-            hHits: [],
-            hRuns: 0,
-            hErrors: 0
+            strikes: {
+              current: 0,
+              inning: [],
+              total: 0
+            },
+            balls: {
+              current: 0,
+              inning: [],
+              total: 0
+            },
+            fouls: {
+              current: 0,
+              inning: [],
+              total: 0
+            },
+            hits: {
+              current: 0,
+              inning: [],
+              total: 0
+            },
+            runs: {
+              current: 0,
+              inning: [],
+              total: 0
+            },
+            errors: {
+              current: 0,
+              inning: [],
+              total: 0
+            }
           },
           lastBat: 0
         },
         visitor: {
           players: ["AR", "Jeffery", "Jessica", "Jose"],
           record: {
-            vStrikes: 0,
-            vBalls: 0,
-            vFouls: 0,
-            vHits: [],
-            vRuns: 0,
-            vErrors: 0
+            strikes: {
+              current: 0,
+              inning: [],
+              total: 0
+            },
+            balls: {
+              current: 0,
+              inning: [],
+              total: 0
+            },
+            fouls: {
+              current: 0,
+              inning: [],
+              total: 0
+            },
+            hits: {
+              current: 0,
+              inning: [],
+              total: 0
+            },
+            runs: {
+              current: 0,
+              inning: [],
+              total: 0
+            },
+            errors: {
+              current: 0,
+              inning: [],
+              total: 0
+            }
           },
           lastBat: 0
         }
@@ -163,7 +212,6 @@ class App extends Component {
     if (batter === this.state.teams[this.state.batting.team].players.length) {
       batter = 0;
     }
-
     this.setState({
       ball: 0,
       strike: 0,
@@ -177,7 +225,6 @@ class App extends Component {
 
   changeTeam = () => {
     let newTeam;
-
     this.state.batting.team === "home"
       ? (newTeam = Object.keys(this.state.teams)[1])
       : (newTeam = Object.keys(this.state.teams)[0]);
@@ -190,15 +237,37 @@ class App extends Component {
       this.state.batting.lastBat
     ];
 
-    // if (this.state.inning > 9) {
-    //   newTeam = Object.keys(this.state.teams)[1];
-    //   lastBatter = this.state.teams.visitor.players.indexOf(
-    //     this.state.teams.visitor.lastBat
-    //   );
-    //   newBatter = this.state.teams.visitor.players[
-    //     this.state.teams.visitor.lastBat
-    //   ];
-    // }
+    const team = this.state.batting.team;
+    const record = this.state.teams[team].record;
+    const keys = Object.keys(record);
+    // const values = Object.entries(record);
+    const value = Object.values(record);
+    // console.log(values, keys, value);
+    // console.log(e[0], e[1]);
+    let i = 0;
+    keys.forEach(key => {
+      i = i + 1;
+      console.log(i);
+      this.setState({
+        teams: {
+          ...this.state.teams,
+          [team]: {
+            ...this.state.teams[team],
+            record: {
+              ...record,
+              [key]: "VALUE"
+              // {
+              //   ...record.key,
+              //   "VALUE"
+              //   // inning: [...record.key.inning, [this.state.inning, value[i]]]
+              // }
+            }
+          }
+        }
+      });
+    });
+    //
+
     this.state.inningHalf
       ? this.setState({
           inning: this.state.inning + 1,
@@ -220,8 +289,6 @@ class App extends Component {
             base3: "",
             base4: ""
           },
-          //? why could I not set lastBat when displaying score from record?? Display: 5
-          // ? Why does this set teams full object to that rather than updating it?
           teams: {
             ...this.state.teams,
             [this.state.batting.team]: {
@@ -230,20 +297,66 @@ class App extends Component {
             }
           }
         });
+
+    //  this.setState({
+    //    teams: {
+    //      ...this.state.teams,
+    //      [team]: {
+    //        ...this.state.teams[team],
+    //        record: {
+    //          ...record,
+    //          [inputs]: {
+    //            ...record[inputs],
+    //            current: record[inputs].current + 1,
+    //            total: record[inputs].total + 1
+    //          }
+    //        }
+    //      }
+    //    }
+    //  });
+
+    // if (this.state.inning > 9) {
+    //   newTeam = Object.keys(this.state.teams)[1];
+    //   lastBatter = this.state.teams.visitor.players.indexOf(
+    //     this.state.teams.visitor.lastBat
+    //   );
+    //   newBatter = this.state.teams.visitor.players[
+    //     this.state.teams.visitor.lastBat
+    //   ];
+    // }
   };
 
   //todo able to create custom hook for setting state on strike, ball, error handlers... DRY CODE
 
-  strikeHandler = () => {
+  scoreHandler = input => {
+    const team = this.state.batting.team;
+    const record = this.state.teams[team].record;
+    const inputs = `${input}s`;
     this.setState({
-      strike: this.state.strike + 1
+      [input]: this.state[input] + 1,
+      teams: {
+        ...this.state.teams,
+        [team]: {
+          ...this.state.teams[team],
+          record: {
+            ...record,
+            [inputs]: {
+              ...record[inputs],
+              current: record[inputs].current + 1,
+              total: record[inputs].total + 1
+            }
+          }
+        }
+      }
     });
   };
 
+  strikeHandler = () => {
+    this.scoreHandler("strike");
+  };
+
   ballHandler = () => {
-    this.setState({
-      ball: this.state.ball + 1
-    });
+    this.scoreHandler("ball");
   };
 
   foulHandler = () => {
@@ -262,12 +375,28 @@ class App extends Component {
         foul: this.state.foul + 1
       });
     }
+    const team = this.state.batting.team;
+    const record = this.state.teams[team].record;
+    this.setState({
+      teams: {
+        ...this.state.teams,
+        [team]: {
+          ...this.state.teams[team],
+          record: {
+            ...record,
+            fouls: {
+              ...record.fouls,
+              current: record.fouls.current + 1,
+              total: record.fouls.total + 1
+            }
+          }
+        }
+      }
+    });
   };
 
   errorHandler = () => {
-    this.setState({
-      error: this.state.error + 1
-    });
+    this.scoreHandler("error");
   };
 
   hitSingleHandler = () => {
@@ -365,6 +494,7 @@ class App extends Component {
           triple={this.hitTripleHandler}
           homeRun={this.hitHomeRunHandler}
           reset={this.resetHandler}
+          scoreHandler={this.scoreHandler}
         />
         {/* <Roster teams={this.state.teams} /> */}
         <Record teams={this.state.teams} />
