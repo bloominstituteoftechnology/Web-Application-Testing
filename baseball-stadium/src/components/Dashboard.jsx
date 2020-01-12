@@ -1,6 +1,16 @@
 import React from "react";
 
-export const Dashboard = ({ strike, ball, foul, hit, reset }) => {
+export const Dashboard = ({
+  strike,
+  ball,
+  foul,
+  error,
+  single,
+  double,
+  triple,
+  homeRun,
+  reset
+}) => {
   return (
     <div className="dashboard-wrapper">
       {/* Row 1 */}
@@ -18,20 +28,29 @@ export const Dashboard = ({ strike, ball, foul, hit, reset }) => {
         <button onClick={foul} className="dashboard-btn-foul">
           Foul
         </button>
-      </div>
-      {/*! Row 2 */}
-      <div className="dashboard-row2">
-        <button onClick={hit} className="dashboard-btn-hit">
-          Hit
+        <button onClick={error} className="dashboard-btn-error">
+          Error
         </button>
-        <div className="dashboard-btn-runs">
-          <button className="dashboard-btn-hitSingle">Single</button>
-          <button className="dashboard-btn-hitDouble">Double</button>
-          <button className="dashboard-btn-hitTriple">Triple</button>
-        </div>
         <button onClick={reset} className="dashboard-btn-reset">
           Reset
         </button>
+      </div>
+      {/*! Row 2 */}
+      <div className="dashboard-row2">
+        <div className="dashboard-btn-runs">
+          <button onClick={single} className="dashboard-btn-hitSingle">
+            Single
+          </button>
+          <button onClick={double} className="dashboard-btn-hitDouble">
+            Double
+          </button>
+          <button onClick={triple} className="dashboard-btn-hitTriple">
+            Triple
+          </button>
+          <button onClick={homeRun} className="dashboard-btn-hit">
+            Home Run
+          </button>
+        </div>
       </div>
     </div>
   );

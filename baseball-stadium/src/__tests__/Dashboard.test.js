@@ -31,9 +31,14 @@ describe("<Dashboard />", () => {
       rtl.fireEvent.click(getByText(/foul/i));
     });
 
-    it("hit btn clicked", () => {
+    it("error btn clicked", () => {
       const { getByText } = rtl.render(<Dashboard />);
-      rtl.fireEvent.click(getByText(/hit/i));
+      rtl.fireEvent.click(getByText(/error/i));
+    });
+
+    it("reset btn clicked", () => {
+      const { getByText } = rtl.render(<Dashboard />);
+      rtl.fireEvent.click(getByText(/reset/i));
     });
 
     it("single btn clicked", () => {
@@ -51,9 +56,9 @@ describe("<Dashboard />", () => {
       rtl.fireEvent.click(getByText(/triple/i));
     });
 
-    it("reset btn clicked", () => {
+    it("homeRun btn clicked", () => {
       const { getByText } = rtl.render(<Dashboard />);
-      rtl.fireEvent.click(getByText(/reset/i));
+      rtl.fireEvent.click(getByText(/home run/i));
     });
   });
 });
