@@ -35,7 +35,7 @@ class App extends Component {
 
       teams: {
         home: {
-          players: ["Braden", "Wes", "Steven", "Ark"],
+          players: ["Braden", "Wes", "Steve", "Ark"],
           record: {
             strikes: {
               current: 0,
@@ -240,33 +240,11 @@ class App extends Component {
     const team = this.state.batting.team;
     const record = this.state.teams[team].record;
     const keys = Object.keys(record);
-    // const values = Object.entries(record);
-    const value = Object.values(record);
-    // console.log(values, keys, value);
-    // console.log(e[0], e[1]);
-    let i = 0;
+
     keys.forEach(key => {
-      i = i + 1;
-      console.log(i);
-      this.setState({
-        teams: {
-          ...this.state.teams,
-          [team]: {
-            ...this.state.teams[team],
-            record: {
-              ...record,
-              [key]: "VALUE"
-              // {
-              //   ...record.key,
-              //   "VALUE"
-              //   // inning: [...record.key.inning, [this.state.inning, value[i]]]
-              // }
-            }
-          }
-        }
-      });
+      record[key].inning.push(record[key].current);
+      record[key].current = 0;
     });
-    //
 
     this.state.inningHalf
       ? this.setState({
@@ -297,33 +275,6 @@ class App extends Component {
             }
           }
         });
-
-    //  this.setState({
-    //    teams: {
-    //      ...this.state.teams,
-    //      [team]: {
-    //        ...this.state.teams[team],
-    //        record: {
-    //          ...record,
-    //          [inputs]: {
-    //            ...record[inputs],
-    //            current: record[inputs].current + 1,
-    //            total: record[inputs].total + 1
-    //          }
-    //        }
-    //      }
-    //    }
-    //  });
-
-    // if (this.state.inning > 9) {
-    //   newTeam = Object.keys(this.state.teams)[1];
-    //   lastBatter = this.state.teams.visitor.players.indexOf(
-    //     this.state.teams.visitor.lastBat
-    //   );
-    //   newBatter = this.state.teams.visitor.players[
-    //     this.state.teams.visitor.lastBat
-    //   ];
-    // }
   };
 
   //todo able to create custom hook for setting state on strike, ball, error handlers... DRY CODE
@@ -332,6 +283,7 @@ class App extends Component {
     const team = this.state.batting.team;
     const record = this.state.teams[team].record;
     const inputs = `${input}s`;
+
     this.setState({
       [input]: this.state[input] + 1,
       teams: {
@@ -412,6 +364,7 @@ class App extends Component {
         base4: this.state.bases.base3
       }
     });
+    this.scoreHandler("hit");
     this.newBatter();
   };
 
@@ -428,6 +381,7 @@ class App extends Component {
         base4: this.state.bases.base3
       }
     });
+    this.scoreHandler("hit");
     this.newBatter();
   };
 
@@ -444,6 +398,7 @@ class App extends Component {
         base4: this.state.bases.base1
       }
     });
+    this.scoreHandler("hit");
     this.newBatter();
   };
 
@@ -459,6 +414,7 @@ class App extends Component {
         base4: this.state.batting.player
       }
     });
+    this.scoreHandler("hit");
     this.newBatter();
   };
 
@@ -496,8 +452,8 @@ class App extends Component {
           reset={this.resetHandler}
           scoreHandler={this.scoreHandler}
         />
-        {/* <Roster teams={this.state.teams} /> */}
-        <Record teams={this.state.teams} />
+        <Roster teams={this.state.teams} />
+        <Record teams={this.state.teams} inning={this.state.inning} />
         <BaseTracker bases={this.state.bases} />
       </div>
     );
