@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <h1>
+      At bat baseball tracker
+    </h1>
+    <div
+      data-testid="btnParent"
+    >
+      <button>
+        Strike
+      </button>
+      <button>
+        Ball
+      </button>
+      <button>
+        Foul
+      </button>
+      <button>
+        Hit
+      </button>
+    </div>
+    <div>
+      <h2>
+        Strikes: 0
+      </h2>
+      <h2>
+        Balls: 0
+      </h2>
+    </div>
+  </div>
+</DocumentFragment>
+`;

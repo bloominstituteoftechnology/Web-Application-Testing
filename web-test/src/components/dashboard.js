@@ -40,11 +40,11 @@ const Dashboard =(props) =>{
 
 
     return(
-        <div>
-            <button onClick={handleStrike}>Strike</button>
-            <button onClick={handleBalls}>Ball</button>
-            <button onClick={handleFouls}>Foul</button>
-            <button onClick={handleHits}>Hit</button>
+        <div data-testid='btnParent'>
+            <button  onClick={handleStrike}>Strike</button>
+            <button  onClick={handleBalls}>Ball</button>
+            <button  onClick={handleFouls}>Foul</button>
+            <button  onClick={handleHits}>Hit</button>
         </div>
     )
 }
