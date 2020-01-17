@@ -1,1 +1,0 @@
-import{handleStrikes, handleBalls, handleFouls, handleHits} from './dashboard';

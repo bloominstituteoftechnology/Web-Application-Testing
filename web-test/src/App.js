@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <h1>At bat baseball tracker</h1>
       <Dashboard strikes={strikes} setStrikes={setStrikes} balls={balls} setBalls={setBalls} />
-      <Display strikes={strikes} balls={balls} />
+      <Display strikes={strikes} balls={balls} setStrikes={setStrikes}setBalls={setBalls}  />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+    
 
 const Dashboard =(props) =>{
     const {strikes, setStrikes, balls, setBalls,}= props;
@@ -27,6 +28,7 @@ const Dashboard =(props) =>{
 
     const handleFouls = e =>{
         e.preventDefault();
+        console.log('foul')
         if(strikes < 2){
             setStrikes(strikes + 1);
         }
@@ -34,6 +36,7 @@ const Dashboard =(props) =>{
     
     const handleHits = e =>{
         e.preventDefault();
+        console.log('hit')
         setStrikes(0);
         setBalls(0)
     }
@@ -41,10 +44,10 @@ const Dashboard =(props) =>{
 
     return(
         <div data-testid='btnParent'>
-            <button  onClick={handleStrike}>Strike</button>
-            <button  onClick={handleBalls}>Ball</button>
-            <button  onClick={handleFouls}>Foul</button>
-            <button  onClick={handleHits}>Hit</button>
+            <button data-testid="striker" onClick={handleStrike}>Strike</button>
+            <button data-testid='baller' onClick={handleBalls}>Ball</button>
+            <button data-testid='fouler' onClick={handleFouls}>Foul</button>
+            <button  data-testid='hiter' onClick={handleHits}>Hit</button>
         </div>
     )
 }
