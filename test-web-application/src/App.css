@@ -1,0 +1,33 @@
+.App {
+  text-align: center;
+}
+.App-header {
+  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+.display-contaoner{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+ .dashboard-container{
+  display:flex;
+  flex-direction: row;
+  justify-content:space-evenly;
+  margin-top: 30px;
+ }
+
+ button {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 1rem auto;
+  border-radius: 15%;
+  padding: 15px 30px;
+  border: 1px solid #aaaaaa;
+}
