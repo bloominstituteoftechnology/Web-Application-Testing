@@ -1,9 +1,15 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import * as rtl from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 import App from './App';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+afterEach(rtl.cleanup);
+
+describe('App', () => {
+  it('mounts to a kind of simulated DOM', () => {
+    const simulatedDOM = rtl.render(<App />);
+    const h3 = simulatedDOM.queryByText(/dashboard/i);
+    expect(h3).toBeInTheDocument();
+    console.log(h3.textContent);
+  })
+})

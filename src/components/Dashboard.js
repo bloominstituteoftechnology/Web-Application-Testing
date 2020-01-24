@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Dashboard = ({ balls, setBalls, strikes, setStrikes }) => {
+const Dashboard = ({ balls, setBalls, strikes, setStrikes, atBat, setAtBat }) => {
    const newBatter = () => {
       setBalls(0);
       setStrikes(0);
+      setAtBat(atBat + 1);
    }
 
    const upBallCount = () => {
