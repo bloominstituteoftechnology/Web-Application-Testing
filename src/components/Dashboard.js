@@ -35,10 +35,10 @@ const Dashboard = ({ balls, setBalls, strikes, setStrikes, atBat, setAtBat }) =>
       <div>
          <h3>Dashboard</h3>
          <div className='dash-buttons'>
-            <button onClick={upStrikeCount}>Strike</button>
-            <button onClick={upBallCount}>Ball</button>
-            <button onClick={foulHandler}>Foul</button>
-            <button onClick={newBatter}>Hit</button>
+            <button data-testid='strike-btn' onClick={upStrikeCount}>Strike</button>
+            <button data-testid='ball-btn' onClick={upBallCount}>Ball</button>
+            <button data-testid='foul-btn' onClick={foulHandler}>Foul</button>
+            <button data-testid='hit-btn' onClick={newBatter}>Hit</button>
          </div>
       </div>
    )

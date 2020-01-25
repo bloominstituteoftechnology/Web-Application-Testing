@@ -5,8 +5,8 @@ const Display = ({ balls, strikes, atBat }) => {
       <div>
          <div className='at-bat-data'>
             <h3>At Bat: #{atBat}</h3>
-            <p>Strikes: {strikes}</p>
-            <p>Balls: {balls}</p>         
+            <p data-testid='strike'>Strikes: {strikes}</p>
+            <p data-testid='ball'>Balls: {balls}</p>         
          </div>
       </div>
    )
