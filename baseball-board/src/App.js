@@ -1,6 +1,6 @@
 import React from 'react';
-import Dashboard from './components/Dashboard';
-import Display from './components/Display';
+import Dashboard from './components/Dashboard/Dashboard';
+import Display from './components/Display/Display';
 import logo from './logo.svg';
 import './App.css';
 
@@ -21,8 +21,8 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <Dashboard />
       <Display />
+      <Dashboard />
     </div>
   );
 }

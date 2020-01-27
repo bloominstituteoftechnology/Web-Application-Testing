@@ -1,0 +1,20 @@
+.display-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2.5rem;
+
+
+    .strike {
+        border: 1px solid black;
+        background-color: green;
+        height: 10rem;
+        width: 10rem;
+    }
+
+    .ball {
+        border: 1px solid black;
+        background-color: green;
+        height: 10rem;
+        width: 10rem;
+    }
+}
