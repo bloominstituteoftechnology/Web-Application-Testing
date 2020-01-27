@@ -1,4 +1,5 @@
 import React from 'react';
+import '../components/dashboard.css';
 
 const Dashboard = (props) => {
 
@@ -47,7 +48,7 @@ const Dashboard = (props) => {
                         if(props.whosUp === 'Home') {
                             props.setHomeHits(props.homeHits+1);
                         } else {
-                            props.setAwayHits(props.AwayHits+1);
+                            props.setAwayHits(props.awayHits+1);
                         }
 
 

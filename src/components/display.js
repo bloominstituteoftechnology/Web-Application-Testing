@@ -1,4 +1,5 @@
 import React from 'react';
+import "../components/display.css";
 
 const Display = (props) => {
 
