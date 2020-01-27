@@ -1,3 +1,10 @@
 .dashboard-container {
+    display: flex;
+    justify-content: center;
     margin-top: 1rem;
+    button {
+        background-color: grey;
+        padding: 1rem;
+        font-weight: 900;
+    }
 }
