@@ -5,6 +5,12 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const [strikeCount, setStrikeCount] = useState(0);
+  const [ballCount, setBallCount] = useState(0);
+  const [foulCount, setFoulCount] = useState(0);
+  const [hit, setHit] = useState(0);
+
   return (
     <div className="App">
       {/* <header className="App-header">
@@ -21,8 +27,10 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <Display />
-      <Dashboard />
+      <Display strike={strike} ball={ball}/>
+      <Dashboard strike={strike} setStrike={setStrike} ball={ball} 
+      setBall={setBall} foul={foul} setFoul={setFoul} hit={hit} 
+      setHit={setHit}/>
     </div>
   );
 }
