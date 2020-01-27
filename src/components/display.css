@@ -1,0 +1,20 @@
+.display-container {
+    border: 4px solid black;
+    border-radius: px;
+    background-color: green;
+  
+  }
+
+ .top-row {
+     display: flex;
+     flex-direction: row;
+     align-content: center;
+     justify-content: space-evenly;
+ }
+
+ .counter {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+ }
