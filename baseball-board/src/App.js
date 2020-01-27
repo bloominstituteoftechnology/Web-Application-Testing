@@ -1,14 +1,36 @@
-import React from 'react';
+import React, { useState } from "react";
 import Dashboard from './components/Dashboard/Dashboard';
 import Display from './components/Display/Display';
 import logo from './logo.svg';
 import './App.css';
 
+export const addStrike = (count) => {
+  return count + 1;
+}
+
+export const addFoul = (count) => {
+  if (foul < 2 && strike < 2) {
+    return count + 1;
+  } 
+}
+
+export const addBall = (count) => {
+  if (foul < 2 && strike < 2) {
+    return count + 1;
+  }
+}
+
+export const addHit = (count) => {
+  if (foul < 2 && strike < 2) {
+      return count + 1;
+  }
+}
+
 function App() {
 
-  const [strikeCount, setStrikeCount] = useState(0);
-  const [ballCount, setBallCount] = useState(0);
-  const [foulCount, setFoulCount] = useState(0);
+  const [strike, setStrike] = useState(0);
+  const [ball, setBall] = useState(0);
+  const [foul, setFoul] = useState(0);
   const [hit, setHit] = useState(0);
 
   return (

@@ -1,19 +1,8 @@
 import React, { useState } from "react";
 import './Dashboard.scss';
 
-export const addStrike = (currentCount) => {
-    currentCount + 1;
-}
-
-export const addFoul = (currentCount) => {
-    if (foul < 2 && strike < 2) {
-       return currentCount + 1;
-    } 
-    setStrikeCount(0);
-}
 
 const Dashboard = ({strike, setStrike, ball, setBall, foul, setFoul, hit, setHit}) => {
-
     
     // if (strike > 2) {
     //     setStrike(0);
@@ -27,9 +16,10 @@ const Dashboard = ({strike, setStrike, ball, setBall, foul, setFoul, hit, setHit
     //     setStrike(0) && setFoul(0);
     // }
 
-    // export const addHit = currentStrikeCount => {
-    //     return currentStrikeCount * 0;
-    //   };
+    if (hit > 1) {
+        setStrike(strike + 1) && setFoul(foul + 1);
+    }
+
 
     return (
         <div className="dashboard-container">
