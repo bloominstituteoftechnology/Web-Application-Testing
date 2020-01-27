@@ -8,15 +8,14 @@
     }
 
 
-    .strike {
+    .pitch {
         background-color: black;
         height: 10rem;
         width: 10rem;
-    }
 
-    .ball {
-        background-color: black;
-        height: 10rem;
-        width: 10rem;
+        .count {
+            font-size: 5rem;
+            color: white;
+        }
     }
 }

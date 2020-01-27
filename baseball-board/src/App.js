@@ -4,28 +4,6 @@ import Display from './components/Display/Display';
 import logo from './logo.svg';
 import './App.css';
 
-export const addStrike = (count) => {
-  return count + 1;
-}
-
-export const addFoul = (count) => {
-  if (foul < 2 && strike < 2) {
-    return count + 1;
-  } 
-}
-
-export const addBall = (count) => {
-  if (foul < 2 && strike < 2) {
-    return count + 1;
-  }
-}
-
-export const addHit = (count) => {
-  if (foul < 2 && strike < 2) {
-      return count + 1;
-  }
-}
-
 function App() {
 
   const [strike, setStrike] = useState(0);
