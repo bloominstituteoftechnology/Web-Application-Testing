@@ -27,6 +27,7 @@ function App() {
           Learn React
         </a>
       </header> */}
+      <h1>At bat dashboard</h1>
       <Display strike={strike} ball={ball}/>
       <Dashboard strike={strike} setStrike={setStrike} ball={ball} 
       setBall={setBall} foul={foul} setFoul={setFoul} hit={hit} 

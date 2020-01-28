@@ -31,48 +31,38 @@ export const addPitch = (count) => {
 
 const Dashboard = ({strike, setStrike, ball, setBall, foul, setFoul, hit, setHit}) => {
     
-    // if (strike > 2) {
-    //     setStrike(0) && setFoul(0);
-    // }
-
-    // if (foul > 0 || foul < 3) {
-    //     setStrike(strike + 1);
-    // }
-
-    // if (ball > 3) {
-    //     setHit(hit + 1);
-    // }
-
-    // if (hit !== 0) {
-    //     setStrike(0) && setFoul(0);
-    // }
+    useEffect(() => {       
+        if (strike >= 3 || ball > 3) {
+            setStrike(0);
+        }  
+    }, [setStrike, strike, ball]);
 
     useEffect(() => {
-        if (strike > 2) {
-            setStrike(0) && setFoul(0);
-        } else if (foul > 0 || foul <= 3) {
+        if (foul < 3) {
             setStrike(foul);
-        } else if (foul >= 3) {
-            setStrike(2);
+        } else if (foul > 3) {
+            setFoul(0);
         }
-    }, [setStrike, setFoul, strike, foul]);
+    }, [foul, setStrike, setFoul]);
 
-    // useEffect(() => {
-    //     if (foul > 0 || foul < 3) {
-    //         console.log("rd: Dashboard.js: useEffect: foul", foul)
-    //         setStrike(foul);
-    //     } else if (foul >= 3) {
-    //         setStrike(2);
-    //     }
-    // }, [foul, setFoul, setStrike, strike]);
+    useEffect(() => {
+        if (ball > 3) {
+            setBall(0);
+        }
+    }, [setBall, ball]);
 
-    // useEffect(() => {
-    //     if (foul > 0 || foul < 3) {
-    //         console.log("rd: Dashboard.js: useEffect: foul", foul)
-    //         setStrike(addPitch(strike));
-    //     }
-    // }, [foul, setStrike, strike]);
+    useEffect(() => {
+        if (hit > 0) {
+            setStrike(0);
+        }
+    }, [hit, setStrike]);
 
+    
+    useEffect(() => {
+        if (hit > 0) {
+            setBall(0);
+        }
+    }, [hit, setBall]);
 
     return (
         <div className="dashboard-container">
