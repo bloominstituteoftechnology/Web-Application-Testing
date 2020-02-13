@@ -31,7 +31,7 @@ Follow these steps to setup your git _fork_ and _branch_.
 - [x ] Fork this repository.
 - [x ] Use GitHub's website to add your project manager as collaborator on **your fork**.
 - [x ] **Clone your forked version** of the repository (**Not Lambda's**!).
-- [ x] Create a new branch: `git checkout -b <firstName-lastName>`.
+- [x] Create a new branch: `git checkout -b <firstName-lastName>`.
 - [ x] Commit changes to your `<firstName-lastName>` branch.
 - [x ] Push often to your branch: `git push origin <firstName-lastName>`.
 
@@ -43,9 +43,9 @@ Follow these steps for completing your project.
 
 ## Minimum Viable Product
 
-After a set of interviews with the potential users of the solution, we gathered the following information about the desired functionality. Not all the information provided by our clients is relevant to the design of the solution, but it's included to help understand the requirements.
+x After a set of interviews with the potential users of the solution, we gathered the following information about the desired functionality. Not all the information provided by our clients is relevant to the design of the solution, but it's included to help understand the requirements.
 
-Your job is to design and build a React application that includes at least two components: `Display` and `Dashboard`. **For the MVP you only need to record information about a player's _"at bat"_**.
+x Your job is to design and build a React application that includes at least two components: `Display` and `Dashboard`. **For the MVP you only need to record information about a player's _"at bat"_**.
 
 The specifications are listed below.
 
