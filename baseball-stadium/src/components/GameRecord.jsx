@@ -34,7 +34,7 @@ export const Record = ({ teams }) => {
           <div className="home-stats stats">
             {homeKeys.map((key, i) => {
               return (
-                <p className="stat">
+                <p className="stat" key={i}>
                   {key}: Total={homeTeamRecord[key].total}
                   {homeTeamRecord[key].inning.map((e, i) => (
                     <span>
@@ -51,9 +51,9 @@ export const Record = ({ teams }) => {
           <h3>Visitor Team</h3>
           {/* {createScore(visitorTeamRecord)} */}
           <div className="away-stats stats">
-            {visitorKeys.map(key => {
+            {visitorKeys.map((key, i) => {
               return (
-                <p className="stat">
+                <p className="stat" key={i}>
                   {key}: Total={visitorTeamRecord[key].total}
                   {visitorTeamRecord[key].inning.map((e, i) => (
                     <span>
