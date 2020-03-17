@@ -7,10 +7,12 @@ import { Record } from "./components/GameRecord";
 import { BaseTracker } from "./components/BaseTracker";
 import { Tracker } from "./components/Tracker";
 //todo check better comments ext for adding /*! and so forth
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
+      scoreUp: 0,
       strike: 0,
       ball: 0,
       foul: 0,
@@ -139,7 +141,14 @@ class App extends Component {
     }
 
     // ! Watches home base
-    this.home();
+    const base = this.state.bases;
+    if (base.base4 !== "") {
+      const team = this.state.batting.team;
+      this.setState({
+        [`${team}Score`]: this.state[`${team}Score`] + this.state.scoreUp,
+        bases: { ...this.state.bases, base4: "" }
+      });
+    }
 
     if (this.state.inning > 8) {
       this.state.homeScore > this.state.visitorScore
@@ -190,16 +199,6 @@ class App extends Component {
       }
     });
     this.newBatter();
-  };
-
-  home = () => {
-    if (this.state.bases.base4 !== "") {
-      const team = this.state.batting.team;
-      this.setState({
-        [`${team}Score`]: this.state[`${team}Score`] + 1,
-        bases: { ...this.state.bases, base4: "" }
-      });
-    }
   };
 
   newBatter = () => {
@@ -353,7 +352,14 @@ class App extends Component {
 
   hitSingleHandler = () => {
     const batter = this.state.batting.player;
+    let score = 0;
+
+    if (this.state.bases.base3 !== "") {
+      score++;
+    }
+
     this.setState({
+      scoreUp: score,
       strike: 0,
       ball: 0,
       hit: this.state.hit + 1,
@@ -370,7 +376,17 @@ class App extends Component {
 
   hitDoubleHandler = () => {
     const batter = this.state.batting.player;
+    let score = 0;
+
+    if (this.state.bases.base3 !== "") {
+      score++;
+    }
+    if (this.state.bases.base2 !== "") {
+      score++;
+    }
+
     this.setState({
+      scoreUp: score,
       strike: 0,
       ball: 0,
       hit: this.state.hit + 1,
@@ -387,7 +403,20 @@ class App extends Component {
 
   hitTripleHandler = () => {
     const batter = this.state.batting.player;
+    let score = 0;
+
+    if (this.state.bases.base3 !== "") {
+      score++;
+    }
+    if (this.state.bases.base2 !== "") {
+      score++;
+    }
+    if (this.state.bases.base1 !== "") {
+      score++;
+    }
+
     this.setState({
+      scoreUp: score,
       strike: 0,
       ball: 0,
       hit: this.state.hit + 1,
@@ -403,7 +432,17 @@ class App extends Component {
   };
 
   hitHomeRunHandler = () => {
+    const base = this.state.bases;
+    let score = 1;
+
+    for (let key in base) {
+      if (base[key] !== "") {
+        score++;
+      }
+    }
+
     this.setState({
+      scoreUp: score,
       strike: 0,
       ball: 0,
       hit: this.state.hit + 1,
@@ -432,12 +471,10 @@ class App extends Component {
   };
 
   render() {
-    // console.log("state", this.state);
-    // console.log("reset", this.resetHandler);
     return (
       //todo add routes to team record and Roster components
       <div className="App">
-        <h1>Baseball Testing</h1>
+        <h1>Baseball Scoreboard</h1>
         <Display state={this.state} />
         <Tracker state={this.state} />
         <Dashboard
