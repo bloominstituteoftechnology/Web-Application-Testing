@@ -5,9 +5,8 @@ import { Dashboard } from "./components/Dashboard";
 import { Roster } from "./components/Roster";
 import { Record } from "./components/GameRecord";
 import { BaseTracker } from "./components/BaseTracker";
-import { Tracker } from "./components/Tracker";
 //todo check better comments ext for adding /*! and so forth
-
+//todo implement "hits"
 class App extends Component {
   constructor() {
     super();
@@ -18,13 +17,13 @@ class App extends Component {
       foul: 0,
       hit: 0,
       inningHalf: false,
-      inning: 0,
+      inning: 1,
       error: 0,
       out: 0,
       homeScore: 0,
       visitorScore: 0,
       batting: {
-        team: "",
+        team: "home",
         player: "",
         lastBat: 0
       },
@@ -115,17 +114,18 @@ class App extends Component {
 
   componentDidMount() {
     this.setState({
-      inning: 1,
+      // inning: 1,
       batting: {
         ...this.state.batting,
         team: Object.keys(this.state.teams)[0],
-        player: this.state.teams.home.players[0],
-        lastBat: 0
+        player: this.state.teams.home.players[0]
+        // lastBat: 0
       }
     });
   }
 
   componentDidUpdate() {
+    this.baseTest = this.state.bases;
     // ! Player Strike Out && Next Player
     if (this.state.strike === 3 && this.state.out < 3) {
       this.strikeOut();
@@ -141,6 +141,7 @@ class App extends Component {
     }
 
     // ! Watches home base
+    // console.log("home", base.base4);
     const base = this.state.bases;
     if (base.base4 !== "") {
       const team = this.state.batting.team;
@@ -302,14 +303,6 @@ class App extends Component {
     });
   };
 
-  strikeHandler = () => {
-    this.scoreHandler("strike");
-  };
-
-  ballHandler = () => {
-    this.scoreHandler("ball");
-  };
-
   foulHandler = () => {
     if (this.state.strike === 0) {
       this.setState({
@@ -326,6 +319,7 @@ class App extends Component {
         foul: this.state.foul + 1
       });
     }
+
     const team = this.state.batting.team;
     const record = this.state.teams[team].record;
     this.setState({
@@ -339,15 +333,15 @@ class App extends Component {
               ...record.fouls,
               current: record.fouls.current + 1,
               total: record.fouls.total + 1
+            },
+            hits: {
+              ...record.hits,
+              total: record.hits.total + 1
             }
           }
         }
       }
     });
-  };
-
-  errorHandler = () => {
-    this.scoreHandler("error");
   };
 
   hitSingleHandler = () => {
@@ -370,6 +364,7 @@ class App extends Component {
         base4: this.state.bases.base3
       }
     });
+
     this.scoreHandler("hit");
     this.newBatter();
   };
@@ -394,7 +389,7 @@ class App extends Component {
         base1: "",
         base2: batter,
         base3: this.state.bases.base1,
-        base4: this.state.bases.base3
+        base4: this.state.bases.base2 || this.state.bases.base3
       }
     });
     this.scoreHandler("hit");
@@ -403,15 +398,16 @@ class App extends Component {
 
   hitTripleHandler = () => {
     const batter = this.state.batting.player;
+    const base = this.state.bases;
     let score = 0;
 
-    if (this.state.bases.base3 !== "") {
+    if (base.base3 !== "") {
       score++;
     }
-    if (this.state.bases.base2 !== "") {
+    if (base.base2 !== "") {
       score++;
     }
-    if (this.state.bases.base1 !== "") {
+    if (base.base1 !== "") {
       score++;
     }
 
@@ -424,7 +420,7 @@ class App extends Component {
         base1: "",
         base2: "",
         base3: batter,
-        base4: this.state.bases.base1
+        base4: base.base1 || base.base2 || base.base3
       }
     });
     this.scoreHandler("hit");
@@ -480,10 +476,8 @@ class App extends Component {
           <BaseTracker bases={this.state.bases} />
         </div>
         <Dashboard
-          strike={this.strikeHandler}
-          ball={this.ballHandler}
+          score={this.scoreHandler}
           foul={this.foulHandler}
-          error={this.errorHandler}
           single={this.hitSingleHandler}
           double={this.hitDoubleHandler}
           triple={this.hitTripleHandler}

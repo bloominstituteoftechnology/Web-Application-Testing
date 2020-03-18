@@ -1,10 +1,8 @@
 import React from "react";
 
 export const Dashboard = ({
-  strike,
-  ball,
+  score,
   foul,
-  error,
   single,
   double,
   triple,
@@ -16,19 +14,19 @@ export const Dashboard = ({
       {/* Row 1 */}
       <div className="dashboard-row1 dashboard-row">
         <button
-          onClick={strike}
+          onClick={() => score("strike")}
           className="dashboard-btn-strike"
           data-testid="strikeBtn"
         >
           Strike
         </button>
-        <button onClick={ball} className="dashboard-btn-ball">
+        <button onClick={() => score("ball")} className="dashboard-btn-ball">
           Ball
         </button>
         <button onClick={foul} className="dashboard-btn-foul">
           Foul
         </button>
-        <button onClick={error} className="dashboard-btn-error">
+        <button onClick={() => score("error")} className="dashboard-btn-error">
           Error
         </button>
         <button onClick={reset} className="dashboard-btn-reset">

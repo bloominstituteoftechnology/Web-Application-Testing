@@ -5,7 +5,7 @@ export const Record = ({ teams }) => {
   const visitorTeamRecord = teams.visitor.record;
   const homeKeys = Object.keys(homeTeamRecord);
   const visitorKeys = Object.keys(visitorTeamRecord);
-
+  //todo DRY THIS CODE
   // const createScore = teamRecord => {
   //   console.log(teamRecord);
   //   const keys = Object.keys(teamRecord);
@@ -26,7 +26,7 @@ export const Record = ({ teams }) => {
 
   return (
     <div className="record-wrapper">
-      <div className="record-home">
+      <div className="record-home record-column">
         <h3>Home Team</h3>
         {/* {createScore(homeTeamRecord)} */}
         <div className="home-stats stats">
@@ -35,7 +35,7 @@ export const Record = ({ teams }) => {
               <p className="stat" key={i}>
                 {key}: Total={homeTeamRecord[key].total}
                 {homeTeamRecord[key].inning.map((e, i) => (
-                  <span>
+                  <span key={i}>
                     {i + 1}: {e}
                   </span>
                 ))}
@@ -45,7 +45,7 @@ export const Record = ({ teams }) => {
         </div>
       </div>
 
-      <div className="record-away">
+      <div className="record-away record-column">
         <h3>Visitor Team</h3>
         {/* {createScore(visitorTeamRecord)} */}
         <div className="away-stats stats">
@@ -54,7 +54,7 @@ export const Record = ({ teams }) => {
               <p className="stat" key={i}>
                 {key}: Total={visitorTeamRecord[key].total}
                 {visitorTeamRecord[key].inning.map((e, i) => (
-                  <span>
+                  <span key={i}>
                     {i + 1}: {e}
                   </span>
                 ))}

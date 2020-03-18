@@ -6,21 +6,21 @@ export const Roster = ({ teams }) => {
 
   return (
     <div className="roster-wrapper">
-      <div className="roaster-home">
+      <div className="roaster-home team-column">
         <h3>Home Team</h3>
-        <ul>
+        <ol>
           {homeTeam.map(player => (
             <li key={player}>{player}</li>
           ))}
-        </ul>
+        </ol>
       </div>
-      <div className="roaster-away">
+      <div className="roaster-away team-column">
         <h3>Visitor Team</h3>
-        <ul>
+        <ol>
           {visitorTeam.map(player => (
             <li key={player}>{player}</li>
           ))}
-        </ul>
+        </ol>
       </div>
     </div>
   );

@@ -62,12 +62,12 @@
             width: 25%
             height: 100%
             margin: auto
-            border: 2px solid blue
+            border: 2px solid orange
             text-align: center
 
             .bases
                 width: 95%
-                margin: auto
+                margin: 1rem auto
                 padding-bottom: .5rem
 
                 span
@@ -98,24 +98,38 @@
         margin-top: 2rem
 
     .bottom-row
-        border: 2px solid black
         width: 95%
+        padding-bottom: 1rem
         @include flex-around
 
         .roster-wrapper
-            // border: 2px solid black
-//         display: flex
-//         justify-content: space-around
+            border: 2px solid black
+            width: 20%
+            @include flex-around
 
-//     .record-wrapper
-//         display: flex
-//         justify-content: space-around
-//         .stats
-//             color: red
-//             .stat
-//                 span
-//                     border: 1px solid blue
-//                     margin: auto 5px
+        .team-column
+            width: 50%
+            h3
+                text-align: center
+            ol
+                width: 50%
+                margin: auto
+
+        .record-wrapper
+            border: 2px solid red
+            width: 75%
+            @include flex-around
+
+            .record-column
+                text-align: center
+                width: 50%
+                .stats
+                    color: red
+                    .stat
+                        span
+
+                            border: 1px solid blue
+                            margin: auto 5px
 
 //     
 //                     // todo get special shape for home base
