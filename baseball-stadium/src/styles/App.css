@@ -1,19 +1,40 @@
 .App {
-  width: 80%;
+  width: 98%;
   margin: auto;
+  background: lawngreen;
+}
+
+@media (min-width: 450px) and (max-width: 800px) {
+  .App {
+    background: limegreen;
+  }
+}
+
+@media (max-width: 449px) {
+  .App {
+    background: blue;
+  }
 }
 
 .App h1 {
   text-align: center;
 }
 
-.App .display-wrapper {
-  border: 3px solid green;
-  margin: 15px auto;
-  text-align: center;
+.App .top-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.App .display-wrapper .display-row1 {
+.App .top-row .display-wrapper {
+  border: 3px solid black;
+  width: 70%;
+  margin: auto;
+}
+
+.App .top-row .display-wrapper .tracker-wrapper {
+  margin: auto;
+  border-bottom: 3px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,13 +42,7 @@
       justify-content: space-around;
 }
 
-.App .display-wrapper .display-row1 .display {
-  border: 2px solid red;
-  width: 30%;
-  text-align: center;
-}
-
-.App .display-wrapper .display-row2 {
+.App .top-row .display-wrapper .display-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,116 +50,74 @@
       justify-content: space-around;
 }
 
-.App .display-wrapper .display-row2 .display {
-  border: 2px solid red;
+.App .top-row .display-wrapper .display-row h2 {
   width: 30%;
   text-align: center;
+}
+
+.App .top-row .base-tracker-wrapper {
+  width: 25%;
+  height: 100%;
+  margin: auto;
+  border: 2px solid blue;
+  text-align: center;
+}
+
+.App .top-row .base-tracker-wrapper .bases {
+  width: 95%;
+  margin: auto;
+  padding-bottom: .5rem;
+}
+
+.App .top-row .base-tracker-wrapper .bases span {
+  border: 2px solid black;
+  border-radius: 40%;
+  padding: .2rem;
+}
+
+.App .top-row .base-tracker-wrapper .bases .bases-row2 {
+  padding: .5rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .App .dashboard-wrapper {
   border: 3px solid blue;
+  width: 75%;
+  margin: 1rem auto;
 }
 
-.App .dashboard-wrapper .dashboard-row1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-.App .dashboard-wrapper .dashboard-row1 button {
-  font-size: 2rem;
-  border: 3px solid skyblue;
-  border-radius: 40%;
-}
-
-.App .dashboard-wrapper .dashboard-row2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-.App .dashboard-wrapper .dashboard-row2 button {
-  font-size: 2rem;
-  border: 3px solid skyblue;
-  border-radius: 40%;
-}
-
-.App .roster-wrapper {
+.App .dashboard-wrapper .dashboard-row {
+  padding: .4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+.App .dashboard-wrapper button {
+  border: 2px solid black;
+  border-radius: 30%;
+  padding: .3rem 2rem;
+  background: lightgrey;
 }
 
 .App #game-record-header {
   text-align: center;
+  margin-top: 2rem;
 }
 
-.App .record-wrapper {
+.App .bottom-row {
+  border: 2px solid black;
+  width: 95%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-}
-
-.App .record-wrapper .stats {
-  color: red;
-}
-
-.App .record-wrapper .stats .stat span {
-  border: 1px solid blue;
-  margin: auto 5px;
-}
-
-.App .base-tracker-wrapper {
-  margin: auto;
-  border: 2px solid black;
-}
-
-.App .base-tracker-wrapper h2 {
-  text-align: center;
-}
-
-.App .base-tracker-wrapper .bases {
-  width: 40%;
-  margin: auto;
-  border: 1px solid red;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.App .base-tracker-wrapper .bases span {
-  border: 2px solid black;
-  border-radius: 40%;
-}
-
-.App .base-tracker-wrapper .bases .bases-row1 {
-  text-align: center;
-}
-
-.App .base-tracker-wrapper .bases .bases-row2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.App .base-tracker-wrapper .bases .bases-row3 {
-  text-align: center;
 }
 /*# sourceMappingURL=App.css.map */

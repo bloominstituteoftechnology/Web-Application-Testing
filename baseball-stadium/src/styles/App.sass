@@ -1,18 +1,25 @@
+@mixin for-mobile
+    @media (max-width: 449px)
+        @content
+
+@mixin for-tablet
+    @media (min-width: 450px) and (max-width: 800px)
+        @content
+
 @mixin display
     border: 2px solid red
     width: 30%
     text-align: center
-@mixin row
+
+@mixin flex-around
     display: flex
     justify-content: space-around
 
-@mixin dashboardRow
-    display: flex
-    justify-content: space-evenly
-    button
-        font-size: 2rem
-        border: 3px solid skyblue
-        border-radius: 40%
+    // button
+    //     font-size: 2rem
+    //     border: 3px solid skyblue
+    //     border-radius: 40%
+
 //todo GET DIAMOND SHAPES FOR BASES
 @mixin diamond
     // border: 1px solid red
@@ -20,65 +27,95 @@
     // rotate(-45deg)
 //? why cant I add comments between the classes???
 .App
-    width: 80%
+    width: 98%
     margin: auto
+    background: lawngreen
+    @include for-tablet
+        background: limegreen
+    @include for-mobile
+        background: blue
+
     h1
         text-align: center
-    .display-wrapper
-        border: 3px solid green
-        margin: 15px auto
-        text-align: center
-        .display-row1
-            @include row
-            .display
-                @include display
-        .display-row2
-            @include row
-            .display
-                @include display
+
+    .top-row
+        display: flex
+
+        .display-wrapper
+            border: 3px solid black
+            width: 70%
+            margin: auto
+
+            .tracker-wrapper
+                margin: auto
+                border-bottom: 3px solid black
+                @include flex-around
+
+            .display-row
+                @include flex-around
+
+                h2
+                    width: 30%
+                    text-align: center
+
+        .base-tracker-wrapper
+            width: 25%
+            height: 100%
+            margin: auto
+            border: 2px solid blue
+            text-align: center
+
+            .bases
+                width: 95%
+                margin: auto
+                padding-bottom: .5rem
+
+                span
+                    border: 2px solid black
+                    border-radius: 40%
+                    padding: .2rem
+
+                .bases-row2
+                    padding: .5rem 0
+                    @include flex-around
+
     .dashboard-wrapper
         border: 3px solid blue
-        .dashboard-row1
-            @include dashboardRow
-        .dashboard-row2
-            @include dashboardRow
-    .roster-wrapper
-        display: flex
-        justify-content: space-around
+        width: 75%
+        margin: 1rem auto
+
+        .dashboard-row
+            padding: .4rem
+            @include flex-around
+        button
+            border: 2px solid black
+            border-radius: 30%
+            padding: .3rem 2rem
+            background: lightgrey
+
     #game-record-header
         text-align: center
-    .record-wrapper
-        display: flex
-        justify-content: space-around
-        .stats
-            color: red
-            .stat
-                span
-                    border: 1px solid blue
-                    margin: auto 5px
+        margin-top: 2rem
 
-    .base-tracker-wrapper
-        margin: auto
+    .bottom-row
         border: 2px solid black
-        h2
-            text-align: center
-        .bases
-            width: 40%
-            margin: auto
-            border: 1px solid red
-            display: flex
-            flex-direction: column
-            span
-                border: 2px solid black
-                border-radius: 40%
-                @include diamond
-            .bases-row1
-                text-align: center
+        width: 95%
+        @include flex-around
 
-            .bases-row2
-                display: flex
-                justify-content: space-between
-            .bases-row3
-                text-align: center
-                span
-                    // todo get special shape for home base
+        .roster-wrapper
+            // border: 2px solid black
+//         display: flex
+//         justify-content: space-around
+
+//     .record-wrapper
+//         display: flex
+//         justify-content: space-around
+//         .stats
+//             color: red
+//             .stat
+//                 span
+//                     border: 1px solid blue
+//                     margin: auto 5px
+
+//     
+//                     // todo get special shape for home base

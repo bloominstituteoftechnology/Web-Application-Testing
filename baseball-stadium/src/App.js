@@ -475,8 +475,10 @@ class App extends Component {
       //todo add routes to team record and Roster components
       <div className="App">
         <h1>Baseball Scoreboard</h1>
-        <Display state={this.state} />
-        <Tracker state={this.state} />
+        <div className="top-row">
+          <Display state={this.state} />
+          <BaseTracker bases={this.state.bases} />
+        </div>
         <Dashboard
           strike={this.strikeHandler}
           ball={this.ballHandler}
@@ -489,9 +491,11 @@ class App extends Component {
           reset={this.resetHandler}
           scoreHandler={this.scoreHandler}
         />
-        <Roster teams={this.state.teams} />
-        <Record teams={this.state.teams} inning={this.state.inning} />
-        <BaseTracker bases={this.state.bases} />
+        <h2 id="game-record-header">Game Record Score Card</h2>
+        <div className="bottom-row">
+          <Roster teams={this.state.teams} />
+          <Record teams={this.state.teams} inning={this.state.inning} />
+        </div>
       </div>
     );
   }
