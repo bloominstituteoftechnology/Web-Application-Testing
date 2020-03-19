@@ -114,18 +114,15 @@ class App extends Component {
 
   componentDidMount() {
     this.setState({
-      // inning: 1,
       batting: {
         ...this.state.batting,
         team: Object.keys(this.state.teams)[0],
         player: this.state.teams.home.players[0]
-        // lastBat: 0
       }
     });
   }
 
   componentDidUpdate() {
-    this.baseTest = this.state.bases;
     // ! Player Strike Out && Next Player
     if (this.state.strike === 3 && this.state.out < 3) {
       this.strikeOut();
@@ -151,6 +148,7 @@ class App extends Component {
       });
     }
 
+    //! Checks end of game
     if (this.state.inning > 8) {
       this.state.homeScore > this.state.visitorScore
         ? alert(
@@ -160,20 +158,6 @@ class App extends Component {
             `Winner: Visitor ${this.state.visitorScore}:${this.state.homeScore}`
           );
     }
-    // if (
-    //   this.state.inning > 8 &&
-    //   this.state.homeScore !== this.state.visitorScore
-    // ) {
-    //   this.state.homeScore > this.state.visitorScore
-    //     ? alert(
-    //         `Winner: Home ${this.state.homeScore}:${this.state.visitorScore}`
-    //       )
-    //     : alert(
-    //         `Winner: Visitor ${this.state.visitorScore}:${this.state.homeScore}`
-    //       );
-    // } else {
-    //   this.changeTeam();
-    // }
   }
 
   strikeOut = () => {
@@ -454,14 +438,13 @@ class App extends Component {
   };
 
   resetHandler = () => {
+    const team = this.state.teams;
     this.setState({
       ...this.baseState,
-      inning: 1,
       batting: {
         ...this.state.batting,
-        team: Object.keys(this.state.teams)[0],
-        player: this.state.teams.home.players[0],
-        lastBat: 0
+        team: Object.keys(team)[0],
+        player: team.home.players[0]
       }
     });
   };
